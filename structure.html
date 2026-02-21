@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-solid/css/uicons-regular-solid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Struktur Organisasi PAGASKA - Paskibra Gala Taksaka</title>
+    <style>
+        /* CSS Tambahan untuk Layout Struktur Organisasi */
+        .structure-layout {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Pembina - 1 kolom tengah */
+        .structure-pembina {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .structure-pembina .org-card {
+            max-width: 280px;
+            width: 100%;
+        }
+
+        /* Pelatih - 2 kolom */
+        .structure-pelatih {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Pengurus Inti - 2 kolom (Ketua, Wakil, Sekretaris, Bendahara) */
+        .structure-pengurus {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .structure-divisi {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Style untuk card dalam struktur */
+        .structure-pelatih .org-card,
+        .structure-pengurus .org-card,
+        .structure-divisi .org-card {
+            margin: 0;
+        }
+
+        /* Responsive untuk mobile */
+        @media (max-width: 480px) {
+            .structure-pelatih,
+            .structure-pengurus {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Style untuk foto member */
+        .member-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .member-photo:hover {
+            transform: scale(1.02);
+        }
+
+        /* Tambahan style untuk org-card agar lebih rapi */
+        .org-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .org-card h4 {
+            color: var(--primary);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .org-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Section title styling */
+        .section-title {
+            text-align: center;
+            color: var(--secondary);
+            margin: 2rem 0 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-logo">🐉 PAGASKA</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="history.html">Sejarah</a></li>
+                <li><a href="structure.html">Struktur</a></li>
+                <li><a href="achievements.html">Prestasi</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Teks Berjalan (Marquee) -->
+    <div class="marquee-container" id="marquee">
+        <div class="marquee-content">
+            <span class="marquee-item">🏆 Juara Harapan 2 Parade Senja 2024</span>
+            <span class="marquee-separator">•</span>
+            <span class="marquee-item">🇮🇩 3 Anggota Terpilih Pasukan Pengibar Bendera Kota Madiun 2023</span>
+            <span class="marquee-separator">•</span>
+            <span class="marquee-item">🏆 Juara Pelajar 1 LKBB Baratayuda'3 Se-Jawa Timur</span>
+            <span class="marquee-separator">•</span>
+            <span class="marquee-item">🐉 Paskibra Gala Taksaka - SMKN 5 Kota Madiun</span>
+        </div>
+    </div>
+
+    <!-- Struktur Organisasi -->
+    <section id="structure">
+        <h2>Struktur Organisasi</h2>
+        <div class="org-tabs">
+            <button class="org-tab active" onclick="showGen(1)">Generasi 1</button>
+            <button class="org-tab" onclick="showGen(2)">Generasi 2</button>
+            <button class="org-tab" onclick="showGen(3)">Generasi 3</button>
+        </div>
+
+        <!-- Generasi 1 -->
+        <div class="org-content active" id="gen1">
+            <div class="structure-layout">
+                <!-- Pembina -->
+                <div class="structure-pembina">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Yulva Romhida"
+                          data-ttl="Madiun, 1 Januari 1980"
+                          data-sosmed="@yulva_alfaiz"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pembina</h4>
+                        <p>Bapak Yulva Romhida</p>
+                    </div>
+                </div>
+
+                <!-- Pelatih -->
+                <div class="section-title">Pelatih</div>
+                <div class="structure-pelatih">
+                    <div class="org-card">
+                        <img src="https://img1.pixhost.to/images/11273/677040669_uploaded_image.jpg"
+                          class="member-photo"
+                          data-nama="Airlangga Sukmana Teja Bramata"
+                          data-ttl="Madiun, 9 September 1999"
+                          data-sosmed="@airlanggabrmt_"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pelatih</h4>
+                        <p>Airlangga Sukmana T.B.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Enrico Bryan's"
+                          data-ttl="Madiun, 9 November 2001"
+                          data-sosmed="@enrico_bryans"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pelatih</h4>
+                        <p>Enrico Bryan's</p>
+                    </div>
+                </div>
+
+                <!-- Pengurus Inti -->
+                <div class="section-title">Pengurus Inti</div>
+                <div class="structure-pengurus">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Ryan Yazid Hidayat"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Ketua Umum</h4>
+                        <p>Ryan Yazid Hidayat</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Sekar Rutikasari"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Wakil Ketua Umum</h4>
+                        <p>Sekar Rutikasari</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Hudaifa Ulil Albab"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Sekretaris</h4>
+                        <p>Ifa</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Febyola Putri Yulianti"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Bendahara</h4>
+                        <p>Feby</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="more-structure" id="moreGen1">
+                <div class="section-title">Pengurus Divisi</div>
+                <div class="structure-divisi">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Rehan Raiszaki Muhfroni"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor GK3</h4>
+                        <p>Rehan Raiszaki M.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Yasir Isa"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Yasir Isa</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="William Cristian Josepa"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>William Cristian J.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Dina Tri Handayani"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Dina Tri H.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Marsela Evi Novitasari"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Marsela Evi Novitasari</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Naina Wulansari"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor Disarda</h4>
+                        <p>Naina Wulansari</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Renata Putri Aurellia"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Renata Putri A.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Dwi Yuliana Saputri"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Dwi Yuliana S</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Denis Putri Yuliana"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Denis Putri Y.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Ilham Bekti Pratama"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Ilham Bekti P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Nataly Reva Ayu Pradifa"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Nataly Reva A.P</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Amanda Amelia M."
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Amanda Amelia M.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Renata Putri Aurellia"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Asiva Rizky Agustin</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Rizky Aditya"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor Infokom</h4>
+                        <p>Rizky Aditya</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Nisrina Kirana Alya"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Nisrina Kirana A</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Amanda Fidda Reza Azzahara"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Amanda Fidda R.A</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Salma Murni Indiannisa"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Salma Murni I.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Zitkanisa Ullima"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Zitkanisa Ullima</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generasi 2 -->
+        <div class="org-content" id="gen2">
+            <div class="structure-layout">
+                <!-- Pembina -->
+                <div class="structure-pembina">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Yulva Romhida"
+                          data-ttl="Madiun, 1 Januari 1980"
+                          data-sosmed="@yulva_alfaiz"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pembina</h4>
+                        <p>Bapak Yulva Romhida</p>
+                    </div>
+                </div>
+
+                <!-- Pelatih -->
+                <div class="section-title">Pelatih</div>
+                <div class="structure-pelatih">
+                    <div class="org-card">
+                        <img src="https://img1.pixhost.to/images/11273/677040669_uploaded_image.jpg"
+                          class="member-photo"
+                          data-nama="Airlangga Sukmana Teja Bramata"
+                          data-ttl="Madiun, 9 September 1999"
+                          data-sosmed="@airlanggabrmt_"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pelatih</h4>
+                        <p>Airlangga Sukmana T.B.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Enrico Bryan's"
+                          data-ttl="Madiun, 9 November 2001"
+                          data-sosmed="@enrico_bryans"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pelatih</h4>
+                        <p>Enrico Bryan's</p>
+                    </div>
+                </div>
+
+                <!-- Pengurus Inti -->
+                <div class="section-title">Pengurus Inti</div>
+                <div class="structure-pengurus">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/indra.jpg"
+                          class="member-photo"
+                          data-nama="Rizky Indra Permana"
+                          data-ttl="Madiun, 15 Maret 2007"
+                          data-sosmed="@rizkyndra"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Ketua Umum</h4>
+                        <p>Rizky Indra Permana</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/bella.jpg"
+                          class="member-photo"
+                          data-nama="Dwi Bella Noviyanti"
+                          data-ttl="Madiun, 20 April 2007"
+                          data-sosmed="@dwibella"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Wakil Ketua Umum</h4>
+                        <p>Dwi Bella Noviyanti</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/anas.jpg"
+                          class="member-photo"
+                          data-nama="Anastasya Putri Giantio"
+                          data-ttl="Madiun, 10 Mei 2007"
+                          data-sosmed="@anastasya"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Sekretaris</h4>
+                        <p>Anastasya Putri G.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pipah.jpg"
+                          class="member-photo"
+                          data-nama="Khofifah Tabina Azka Listaningtyas"
+                          data-ttl="Madiun, 5 Juni 2007"
+                          data-sosmed="@khofifah"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Bendahara</h4>
+                        <p>Khofifah Tabina A.L.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/satria.jpg"
+                          class="member-photo"
+                          data-nama="Satria Nur Hidayatullah"
+                          data-ttl="Madiun, 12 Juli 2007"
+                          data-sosmed="@satria_nh"
+                          onclick="openMemberLightbox(this)">
+                        <h4>DTP</h4>
+                        <p>Satria Nur Hidayatullah</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/reyna.jpg"
+                          class="member-photo"
+                          data-nama="Reyna Natasya Wahyu Safitri"
+                          data-ttl="Madiun, 18 Agustus 2007"
+                          data-sosmed="@reyna_natasya"
+                          onclick="openMemberLightbox(this)">
+                        <h4>DTP</h4>
+                        <p>Reyna Natasya W.S.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="more-structure" id="moreGen2">
+            <div class="section-title">Pengurus Divisi</div>
+                <div class="structure-divisi">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/ramzy.jpg"
+                          class="member-photo"
+                          data-nama="Ramzy Cahya Fauzan"
+                          data-ttl="Madiun, 22 September 2007"
+                          data-sosmed="@ramzy_cf"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor GK3</h4>
+                        <p>Ramzy Cahya F.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/sapta.jpg"
+                          class="member-photo"
+                          data-nama="Sapta Andika Riyanto"
+                          data-ttl="Madiun, 30 Oktober 2007"
+                          data-sosmed="@sapta_ar"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Sapta Andika Riyanto</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/farhan.jpg"
+                          class="member-photo"
+                          data-nama="Farhan Rizky Devannanda"
+                          data-ttl="Madiun, 5 November 2007"
+                          data-sosmed="@farhan_rd"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Farhan Rizky Devannanda</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/keisya.jpg"
+                          class="member-photo"
+                          data-nama="Keisya Nabila"
+                          data-ttl="Madiun, 14 Desember 2007"
+                          data-sosmed="@keisya"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Keisya Nabila</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/tata.jpg"
+                          class="member-photo"
+                          data-nama="Tata Regita"
+                          data-ttl="Madiun, 8 Januari 2008"
+                          data-sosmed="@tata_regita"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor Disarda</h4>
+                        <p>Tata Regita</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/amanda.jpg"
+                          class="member-photo"
+                          data-nama="Amanda Regina Putri Yuditira"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Amanda Regina P.Y.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/ailen.jpg"
+                          class="member-photo"
+                          data-nama="Ailen Listiani"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Ailen Listiani</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/lael.jpg"
+                          class="member-photo"
+                          data-nama="Lael Rahmadhani"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Lael Rahmadhani</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="./assets/images/dea.jpg"
+                          class="member-photo"
+                          data-nama="Dea Alif Purwandini"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Dea Alif P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/dava.jpg"
+                          class="member-photo"
+                          data-nama="Rizky Dava Mahendra"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Rizky Dava M.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/alan.jpg"
+                          class="member-photo"
+                          data-nama="Alan Pratama"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Alan Pratama</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/david.jpg"
+                          class="member-photo"
+                          data-nama="Yohanes David Adhienarta Putra"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Yohanes David A.P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/adit.jpg"
+                          class="member-photo"
+                          data-nama="Aditya Dwi Pratama"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Aditya Dwi P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/farel.jpg"
+                          class="member-photo"
+                          data-nama="Alfarel Belva Falarossy"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Alfarel Belva F.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/vex.png"
+                          class="member-photo"
+                          data-nama="Giovanni Adhi Pratama"
+                          data-ttl="Madiun, 24 Maret 2008"
+                          data-sosmed="@whoisvex"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor Infokom</h4>
+                        <p>Giovanni A.P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/desy.jpg"
+                          class="member-photo"
+                          data-nama="Desy Ariana Putri"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@desy"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Desy Ariana P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/yusilla.jpg"
+                          class="member-photo"
+                          data-nama="Yusilla Anggun Vauli"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Yusilla Anggun V.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/alisya.jpg"
+                          class="member-photo"
+                          data-nama="Alisya Desvita Putri"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@disarda1"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Alisya Desvita P.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generasi 3 -->
+        <div class="org-content" id="gen3">
+            <div class="structure-layout">
+                <!-- Pembina -->
+                <div class="structure-pembina">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Yulva Romhida"
+                          data-ttl="Madiun, 1 Januari 1980"
+                          data-sosmed="@yulva_alfaiz"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pembina</h4>
+                        <p>Bapak Yulva Romhida</p>
+                    </div>
+                </div>
+
+                <!-- Pelatih -->
+                <div class="section-title">Pelatih</div>
+                <div class="structure-pelatih">
+                    <div class="org-card">
+                        <img src="https://img1.pixhost.to/images/11273/677040669_uploaded_image.jpg"
+                          class="member-photo"
+                          data-nama="Airlangga Sukmana Teja Bramata"
+                          data-ttl="Madiun, 9 September 1999"
+                          data-sosmed="@airlanggabrmt_"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pelatih</h4>
+                        <p>Airlangga Sukmana T.B.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"
+                          class="member-photo"
+                          data-nama="Enrico Bryan's"
+                          data-ttl="Madiun, 9 November 2001"
+                          data-sosmed="@enrico_bryans"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Pelatih</h4>
+                        <p>Enrico Bryan's</p>
+                    </div>
+                </div>
+
+                <!-- Pengurus Inti -->
+                <div class="section-title">Pengurus Inti</div>
+                <div class="structure-pengurus">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/afrizal.jpg"
+                          class="member-photo"
+                          data-nama="Muhammad Afrizal Nurjananta"
+                          data-ttl="Madiun, 9 Maret 2009"
+                          data-sosmed="@Afri.jaaal"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Ketua Umum</h4>
+                        <p>Muhammad Afrizal N.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/zahra.jpg"
+                          class="member-photo"
+                          data-nama="Fatimah Az-Zahra"
+                          data-ttl="Madiun, 26 Juli 2008"
+                          data-sosmed="@aarzhhh_"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Wakil Ketua Umum</h4>
+                        <p>Fatimah Az-Zahra</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nazuwa.jpg"
+                          class="member-photo"
+                          data-nama="Nazuwa Qurroti Aqyuni Hasna"
+                          data-ttl="Magetan, 28 Mei 2009"
+                          data-sosmed="@nanasywaww"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Sekretaris 1</h4>
+                        <p>Nazuwa Qurroti A.H.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/asyifa.jpg"
+                          class="member-photo"
+                          data-nama="Asyifa Najwa Nabilla Putri"
+                          data-ttl="Kota Madiun, 14 Januari 2009"
+                          data-sosmed="@syi1.faaa_ "
+                          onclick="openMemberLightbox(this)">
+                        <h4>Sekretaris 2</h4>
+                        <p>Asyifa Najwa N.P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/eva.jpg"
+                          class="member-photo"
+                          data-nama="Eva Devi Setyorini"
+                          data-ttl="Madiun, 8 April 2008"
+                          data-sosmed="@evadvsty"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Bendahara 1</h4>
+                        <p>Eva Devi S.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG-20260213-WA0008.jpg"
+                          class="member-photo"
+                          data-nama="Winni Lestari Arti Ningsih"
+                          data-ttl="Madiun, 6 Januari 2009"
+                          data-sosmed="@Lovly_winn"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Bendahara 2</h4>
+                        <p>Winni Lestari A.N.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/yoga.jpg"
+                          class="member-photo"
+                          data-nama="Yoga Prasetyo Wibowo"
+                          data-ttl="Madiun, 27 Oktober 2008"
+                          data-sosmed="@yogaprsttyo"
+                          onclick="openMemberLightbox(this)">
+                        <h4>DTP</h4>
+                        <p>Yoga Prasetyo W.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/lelly.webp"
+                          class="member-photo"
+                          data-nama="Lelly Anggraini"
+                          data-ttl="Sarolangun, 15 Januari 2009"
+                          data-sosmed="@erjoyedlia"
+                          onclick="openMemberLightbox(this)">
+                        <h4>DTP</h4>
+                        <p>Lelly Anggraini</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="more-structure" id="moreGen3">
+                <div class="section-title">Pengurus Divisi</div>
+                <div class="structure-divisi">
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nopal.JPG"
+                          class="member-photo"
+                          data-nama="Fahri Lintang Saputra"
+                          data-ttl="Madiun, 11 Februari 2009"
+                          data-sosmed="@fls._.110209"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor GK3</h4>
+                        <p>Fahri Lintang S.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/clarinta.jpg"
+                          class="member-photo"
+                          data-nama="Clarinta Jida Valery"
+                          data-ttl="Pekanbaru, 31 Mei 2009"
+                          data-sosmed="@yinsatoru"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Clarinta Jida V.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nur.jpg"
+                          class="member-photo"
+                          data-nama="Nur Azizah Lailatul Munawaroh"
+                          data-ttl="Magetan, 19 Maret 2008"
+                          data-sosmed="@azizuumll"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Nur Azizah L.M.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/violita.jpg"
+                          class="member-photo"
+                          data-nama="Violita Ayu Wardani"
+                          data-ttl="Madiun, 29 Mei 2009"
+                          data-sosmed="@Piosyalalalaa"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Violita Ayu W.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/aymel.jpg"
+                          class="member-photo"
+                          data-nama="Aymel Oktavia Fitroh Masyaroh"
+                          data-ttl="Magetan, 25 Oktober 2008"
+                          data-sosmed="@_Xyviii08"
+                          onclick="openMemberLightbox(this)">
+                        <h4>GK3</h4>
+                        <p>Aymel Oktavia F.M. </p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/suci.jpg"
+                          class="member-photo"
+                          data-nama="Suci Rofiqoh"
+                          data-ttl="Kota Madiun, 30 Desember 2008"
+                          data-sosmed="@_niicth"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor Disarda</h4>
+                        <p>Suci Rofiqoh</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nabila.jpg"
+                          class="member-photo"
+                          data-nama="Nabila Kayyisa Putri"
+                          data-ttl="Madiun, 5 April 2009"
+                          data-sosmed="@nbilakyyisa"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Nabila Kayyisa P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/rolly.jpeg"
+                          class="member-photo"
+                          data-nama="Rolly Sadion Astyani"
+                          data-ttl="Magetan, 30 Desember 2008"
+                          data-sosmed="@rolisa__30"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Rolly Sadion A.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/subhanifah.jpg"
+                          class="member-photo"
+                          data-nama="Subhanifa Dwi Verbyanti"
+                          data-ttl="Madiun, 17 Februari 2009"
+                          data-sosmed="@nadivrya"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Subhanifa Dwi V. </p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/mariska.jpg"
+                          class="member-photo"
+                          data-nama="Mariska Cahya Dwi Maulida"
+                          data-ttl="Magetan, 20 Maret 2009"
+                          data-sosmed="@maris.kachyaa"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Mariska Cahya D.M</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/yasmin.jpg"
+                          class="member-photo"
+                          data-nama="Jahra' Anasula Farianto"
+                          data-ttl="Madiun, 10 November 2008"
+                          data-sosmed="@meliorism.ysea"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Jahra' Anasula F.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/ella.png"
+                          class="member-photo"
+                          data-nama="Ella Rahmadani Elliana"
+                          data-ttl="Madiun, 20 Februari 2008"
+                          data-sosmed="@ellll"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Ella Rahmadani E.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/silvi.jpg"
+                          class="member-photo"
+                          data-nama="Silvia Nur Ramadhani"
+                          data-ttl="Madiun, 28 Agustus 2008"
+                          data-sosmed="@slvvr4m4"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Silvia Nur R.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/adly.jpg"
+                          class="member-photo"
+                          data-nama="Adly Surya Prasetiyo"
+                          data-ttl="Kota Madiun, 17 November 2008"
+                          data-sosmed="@718dly"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Adly Surya P.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/meysa.webp"
+                          class="member-photo"
+                          data-nama="Meysa Desta Maharani"
+                          data-ttl="Kota Madiun, 12 Mei 2008"
+                          data-sosmed="@mey.ajlh_"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Disarda</h4>
+                        <p>Meysa Desta M.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/Richy%20Yuga.webp"
+                          class="member-photo"
+                          data-nama="Richy Yuga Tri Finalya"
+                          data-ttl="Madiun, 29 Desember 2007"
+                          data-sosmed="@rchy.yg"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Koor Infokom</h4>
+                        <p>Richy Yuga T.F </p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/anisa.jpg"
+                          class="member-photo"
+                          data-nama="Anisa Apriliana Tunggal Dewi"
+                          data-ttl="Madiun, 12 April 2008"
+                          data-sosmed="@o_oveuc"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Anisa Apriliana T.D.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/bilqis.jpg"
+                          class="member-photo"
+                          data-nama="Bhilqis Tian Zahrotushita"
+                          data-ttl="Bogor, 28 April 2009"
+                          data-sosmed="@bluetz_summer"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Bhilqis Tian Z.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/khanza.jpg"
+                          class="member-photo"
+                          data-nama="Az Zahrah Khanza Dewi Kuwais"
+                          data-ttl="Madiun, 3 Oktober 2008"
+                          data-sosmed="@bibbleeze"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Az Zahrah Khanza D.K.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nindia.jpg"
+                          class="member-photo"
+                          data-nama="Nindia Artita Lestari"
+                          data-ttl="Madiun, 13 Februari 2009"
+                          data-sosmed="@ndiaayyl"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Nindia Artita L.</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/fahrel.jpg"
+                          class="member-photo"
+                          data-nama="Fahrel Akbar"
+                          data-ttl="Madiun, 1 Oktober 2008"
+                          data-sosmed="@f4ahrell"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Fahrel Akbar</p>
+                    </div>
+                    <div class="org-card">
+                        <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nathan.jpg"
+                          class="member-photo"
+                          data-nama="Janathan Hafiz"
+                          data-ttl="Madiun, 14 Januari 2009"
+                          data-sosmed="@janatan_official_"
+                          onclick="openMemberLightbox(this)">
+                        <h4>Infokom</h4>
+                        <p>Janathan Hafiz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleCurrentGen()">
+            Tampilkan Selengkapnya
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/pagaska_/" target="_blank" aria-label="Instagram">
+                <i class="fi fi-brands-instagram"></i> Instagram
+            </a>
+            <a href="https://www.youtube.com/pagaskasmkn5madiun" target="_blank" aria-label="YouTube">
+                <i class="fi fi-brands-youtube"></i> YouTube
+            </a>
+            <a href="https://www.tiktok.com/gala.taksaka" target="_blank" aria-label="TikTok">
+                <i class="fi fi-brands-tik-tok"></i> TikTok
+            </a>
+            <a href="https://www.smkn5madiun.sch.id" target="_blank" aria-label="Website Sekolah">
+                <i class="fi fi-rs-site-alt"></i> Website Sekolah
+            </a>
+        </div>
+        <p>&copy; 2026 PAGASKA - Paskibra Gala Taksaka. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox untuk Gallery -->
+    <div id="galleryLightbox" class="gallery-lightbox">
+        <div class="gallery-lightbox-content">
+            <button class="lightbox-close" onclick="closeGalleryLightbox()">×</button>
+            <img id="lightboxImage" class="gallery-lightbox-img" src="" alt="">
+            <button class="lightbox-nav lightbox-prev" onclick="prevImage()">❮</button>
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">❯</button>
+            <div class="lightbox-counter">
+                <span id="currentIndex">1</span> / <span id="totalImages">4</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox untuk Detail Anggota -->
+    <div id="memberLightbox"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/structure.js"></script>
+</body>
+</html>
