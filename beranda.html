@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-solid/css/uicons-regular-solid.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Beranda - PAGASKA Portal</title>
+    <style>
+        /* Additional Styles for Portal Page */
+        .portal-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png') center/300px no-repeat;
+            opacity: 0.05;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .portal-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+        
+        .portal-logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(229, 57, 53, 0.5));
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .portal-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #e53935, #ff6f60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .portal-subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .portal-school {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .portal-description {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #e53935;
+            box-shadow: 0 20px 40px rgba(229, 57, 53, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .service-card.ai .service-icon {
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .service-card.music .service-icon {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .service-card.cloud .service-icon {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .service-desc {
+            font-size: 0.95rem;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        
+        .service-url {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #e53935;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-url {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .enter-btn {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #e53935, #ff6f60);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .enter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(229, 57, 53, 0.6);
+        }
+        
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #e53935, transparent);
+            margin: 2rem auto;
+        }
+        
+        @media (max-width: 768px) {
+            .portal-title {
+                font-size: 2.5rem;
+            }
+            .portal-subtitle {
+                font-size: 1.2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="logo-container">
+            <div class="logo-placeholder">
+                <img src="https://files.catbox.moe/2amvxp.png" alt="PAGASKA">
+            </div>
+        </div>
+        <div class="loading-text">PASKIBRA GALA TAKSAKA</div>
+        <div class="loading-bar">
+            <div class="loading-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="beranda" class="nav-logo">🐉 PAGASKA</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="beranda" class="active">Beranda</a></li>
+                <li><a href="tentang">Tentang</a></li>
+                <li><a href="sejarah">Sejarah</a></li>
+                <li><a href="struktur">Struktur</a></li>
+                <li><a href="prestasi">Prestasi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Portal Hero Section -->
+    <section class="portal-hero">
+        <div class="portal-content">
+            <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png" alt="Logo PAGASKA" class="portal-logo">
+            <h1 class="portal-title">PAGASKA</h1>
+            <p class="portal-subtitle">Paskibra Gala Taksaka</p>
+            <p class="portal-school">SMK Negeri 5 Kota Madiun</p>
+            
+            <div class="divider"></div>
+            
+            <p class="portal-description">
+                Selamat datang di portal resmi Paskibra Gala Taksaka. 
+                Kami adalah organisasi kebanggaan SMKN 5 Kota Madiun yang berdedikasi 
+                dalam pengibaran bendera dan pembentukan karakter pelajar. 
+                Jelajahi layanan digital kami di bawah ini.
+            </p>
+            
+            <a href="utama" class="enter-btn">
+                <i class="fi fi-rs-arrow-right" style="margin-right: 8px;"></i>
+                Masuk ke Website Utama
+            </a>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <a href="https://ai.pagaska.my.id" target="_blank" class="service-card ai">
+                    <i class="fi fi-brands-open-ai service-icon"></i>
+                    <h3 class="service-title">Pagaska AI</h3>
+                    <p class="service-desc">
+                        Asisten AI cerdas untuk membantu kebutuhan informasi dan pembelajaran interaktif seputar Paskibra dan kegiatan sekolah.
+                    </p>
+                    <span class="service-url">ai.pagaska.my.id →</span>
+                </a>
+
+                <a href="https://music.pagaska.my.id" target="_blank" class="service-card music">
+                    <i class="fi fi-brands-spotify service-icon"></i>
+                    <h3 class="service-title">Pagaska Music</h3>
+                    <p class="service-desc">
+                        Platform streaming lagu dan mars Paskibra Gala Taksaka, lengkap dengan playlist latihan dan koleksi lagu patriotik.
+                    </p>
+                    <span class="service-url">music.pagaska.my.id →</span>
+                </a>
+
+                <a href="https://cloud.pagaska.my.id" target="_blank" class="service-card cloud">
+                    <i class="fi fi-rs-cloud service-icon"></i>
+                    <h3 class="service-title">Pagaska Cloud</h3>
+                    <p class="service-desc">
+                        Penyimpanan cloud untuk dokumen, foto, dan file penting organisasi Paskibra dengan akses aman dan terorganisir.
+                    </p>
+                    <span class="service-url">cloud.pagaska.my.id →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a0a; border-top: 1px solid #222;">
+        <div class="social-links">
+            <a href="https://www.instagram.com/pagaska_/" target="_blank" aria-label="Instagram">
+                <i class="fi fi-brands-instagram"></i> Instagram
+            </a>
+            <a href="https://www.youtube.com/pagaskasmkn5madiun" target="_blank" aria-label="YouTube">
+                <i class="fi fi-brands-youtube"></i> YouTube
+            </a>
+            <a href="https://www.tiktok.com/gala.taksaka" target="_blank" aria-label="TikTok">
+                <i class="fi fi-brands-tik-tok"></i> TikTok
+            </a>
+            <a href="https://www.smkn5madiun.sch.id" target="_blank" aria-label="Website Sekolah">
+                <i class="fi fi-rs-site-alt"></i> Website Sekolah
+            </a>
+        </div>
+        <p>&copy; 2026 PAGASKA - Paskibra Gala Taksaka. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
