@@ -34,7 +34,8 @@ function initMarquee() {
     }, 0);
     
     let position = 0;
-    const speed = 1; // px per frame (sesuaikan kecepatan)
+    let speed = 1; // px per frame (sesuaikan kecepatan)
+    let speedBackup = speed;
     
     function animateMarquee() {
         position -= speed;
