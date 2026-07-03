@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0b1220">
-    <meta name="description" content="PAGASKA — Paskibra Gala Taksaka, SMK Negeri 5 Kota Madiun. Disiplin, kepemimpinan, dan kehormatan dalam pengibaran bendera.">
-    <link rel="icon" href="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
-    <title>PAGASKA — Paskibra Gala Taksaka</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" name="viewport"/>
+<meta content="#0b1220" name="theme-color"/>
+<meta content="PAGASKA — Paskibra Gala Taksaka, SMK Negeri 5 Kota Madiun. Disiplin, kepemimpinan, dan kehormatan dalam pengibaran bendera." name="description"/>
+<link href="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png" rel="icon"/>
+<link href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet"/>
+<link href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css" rel="stylesheet"/>
+<title>PAGASKA — Paskibra Gala Taksaka</title>
+<style>
 /* ==========================================================================
    PAGASKA — "Sang Formasi" Design System
    Paskibra Gala Taksaka · SMK Negeri 5 Kota Madiun
@@ -120,10 +121,10 @@ nav {
     background: var(--ink);
     border-bottom: 1px solid rgba(184, 145, 47, 0.18);
 }
-nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1rem; }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1.5rem; }
 .nav-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--parchment); letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.5rem; }
 
-.nav-menu { list-style: none; display: flex; gap: 2.1rem; }
+.nav-menu { list-style: none; display: flex; gap: 2.1rem; flex: 1; justify-content: flex-end; align-items: center; margin: 0; padding: 0; }
 .nav-menu a { font-size: 0.83rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(250, 246, 236, 0.7); position: relative; padding: 0.4rem 0; transition: color 0.25s ease; }
 .nav-menu a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.25s ease; }
 .nav-menu a:hover, .nav-menu a.active { color: var(--parchment); }
@@ -317,7 +318,7 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
 /* ==========================================================================
    STRUCTURE PAGE — tabs, toggle, extra layout
    ========================================================================== */
-.structure-layout { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+.structure-layout { max-width: 900px; margin: 0 auto; padding: 0 0.85rem; }
 .structure-pembina { display: flex; justify-content: center; margin-bottom: 2rem; }
 .structure-pembina .org-card { max-width: 280px; width: 100%; }
 .structure-pelatih,
@@ -440,7 +441,11 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 @media (max-width: 1200px) { .nav-menu { gap: 1rem; } .about-content { gap: 3rem; } }
 @media (max-width: 1080px) { .nav-menu a { font-size: 0.8rem; } }
 @media (max-width: 520px) {
-    .structure-pelatih, .structure-pengurus, .structure-divisi { grid-template-columns: 1fr; gap: 1rem; }
+    .structure-pelatih, .structure-pengurus, .structure-divisi { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; max-width: 100%; }
+    .org-card { padding: 0.9rem 0.6rem; }
+    .org-card h4 { font-size: 0.82rem; margin: 0.6rem 0 0.2rem; }
+    .org-card p { font-size: 0.72rem; }
+    .member-photo { height: 130px; }
     .detail-item { grid-template-columns: 1fr; gap: 0.15rem; }
     .achievement-header, .achievement-body { padding-left: 1.25rem; padding-right: 1.25rem; }
     .achievement-meta { gap: 0.6rem 1rem; font-size: 0.78rem; }
@@ -502,52 +507,45 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
     </style>
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="logo-container">
-            <div class="logo-placeholder">
-                <img src="https://files.catbox.moe/2amvxp.png" alt="Lambang PAGASKA">
-            </div>
-        </div>
-        <div class="loading-text">Paskibra Gala Taksaka</div>
-        <div class="loading-bar">
-            <div class="loading-bar-fill"></div>
-        </div>
-    </div>
-
-    <nav>
-        <div class="container">
-            <a href="#/home" class="nav-logo" data-route-link="#/home">PAGASKA</a>
-            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu" role="button" tabindex="0">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
-
-    <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
-    <ul class="nav-menu" id="navMenu">
-                <li><a href="#/home" data-route-link="#/home">Beranda</a></li>
-                <li><a href="#/project" data-route-link="#/project">Project</a></li>
-                <li><a href="#/about" data-route-link="#/about">Tentang</a></li>
-                <li><a href="#/history" data-route-link="#/history">Sejarah</a></li>
-                <li><a href="#/structure" data-route-link="#/structure">Struktur</a></li>
-                <li><a href="#/achievements" data-route-link="#/achievements">Prestasi</a></li>
-    </ul>
-
-    <div class="marquee-container" id="marquee">
-        <div class="marquee-content">
-            <span class="marquee-item">JUARA HARAPAN 2 — PARADE SENJA 2024</span>
-            <span class="marquee-separator">•</span>
-            <span class="marquee-item">3 ANGGOTA TERPILIH PASUKAN PENGIBAR BENDERA KOTA MADIUN 2023</span>
-            <span class="marquee-separator">•</span>
-            <span class="marquee-item">JUARA PELAJAR 1 — LKBB BARATAYUDA'3 SE-JAWA TIMUR</span>
-            <span class="marquee-separator">•</span>
-            <span class="marquee-item">PASKIBRA GALA TAKSAKA — SMKN 5 KOTA MADIUN</span>
-        </div>
-    </div>
-
-    <main id="app">
-
-    <section id="home" data-route="home" class="route hero">
+<div id="loading-screen">
+<div class="logo-container">
+<div class="logo-placeholder">
+<img alt="Lambang PAGASKA" src="https://files.catbox.moe/2amvxp.png"/>
+</div>
+</div>
+<div class="loading-text">Paskibra Gala Taksaka</div>
+<div class="loading-bar">
+<div class="loading-bar-fill"></div>
+</div>
+</div>
+<nav>
+<div class="container">
+<a class="nav-logo" data-route-link="#/home" href="#/home">PAGASKA</a>
+<ul class="nav-menu" id="navMenu">
+<li><a data-route-link="#/home" href="#/home">Beranda</a></li>
+<li><a data-route-link="#/project" href="#/project">Project</a></li>
+<li><a data-route-link="#/about" href="#/about">Tentang</a></li>
+<li><a data-route-link="#/history" href="#/history">Sejarah</a></li>
+<li><a data-route-link="#/structure" href="#/structure">Struktur</a></li>
+<li><a data-route-link="#/achievements" href="#/achievements">Prestasi</a></li>
+</ul><div aria-label="Buka menu" class="menu-toggle" id="menuToggle" onclick="toggleMenu()" role="button" tabindex="0">
+<span></span><span></span><span></span>
+</div>
+<div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div></div>
+</nav>
+<div class="marquee-container" id="marquee">
+<div class="marquee-content">
+<span class="marquee-item">JUARA HARAPAN 2 — PARADE SENJA 2024</span>
+<span class="marquee-separator">•</span>
+<span class="marquee-item">3 ANGGOTA TERPILIH PASUKAN PENGIBAR BENDERA KOTA MADIUN 2023</span>
+<span class="marquee-separator">•</span>
+<span class="marquee-item">JUARA PELAJAR 1 — LKBB BARATAYUDA'3 SE-JAWA TIMUR</span>
+<span class="marquee-separator">•</span>
+<span class="marquee-item">PASKIBRA GALA TAKSAKA — SMKN 5 KOTA MADIUN</span>
+</div>
+</div>
+<main id="app">
+<section class="route hero" data-route="home" id="home">
 <div class="hero-content">
 <div aria-hidden="true" class="hoist"><div class="hoist-flag"></div></div>
 <img alt="Logo PAGASKA" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
@@ -559,8 +557,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
             </a>
 </div>
 </section>
-
-    <section class="route portal-hero" data-route="project" id="project">
+<section class="route portal-hero" data-route="project" id="project">
 <div class="portal-content">
 <img alt="Logo PAGASKA" class="portal-logo" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
 <span class="eyebrow" style="justify-content:center; margin-bottom: 1rem;">Portal Digital</span>
@@ -606,8 +603,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </div>
 </div>
 </section>
-
-    <section id="about" data-route="about" class="route">
+<section class="route" data-route="about" id="about">
 <span class="eyebrow">Tentang Kami</span>
 <h2>Tentang PAGASKA</h2>
 <div class="about-content" style="margin-top: 3rem;">
@@ -638,8 +634,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </div>
 </div>
 </section>
-
-    <section id="history" data-route="history" class="route">
+<section class="route" data-route="history" id="history">
 <span class="eyebrow">Perjalanan</span>
 <h2>Sejarah PAGASKA</h2>
 <p class="section-lede">Tiga tahun barisan, satu komando yang sama.</p>
@@ -670,8 +665,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </div>
 </div>
 </section>
-
-    <section id="structure" data-route="structure" class="route">
+<section class="route" data-route="structure" id="structure">
 <h2>Struktur Organisasi</h2>
 <div class="org-tabs">
 <button class="org-tab active" onclick="showGen(1)">Generasi 1</button>
@@ -928,7 +922,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 <p>Lael Rahmadhani</p>
 </div>
 <div class="org-card">
-<img class="member-photo" data-nama="Dea Alif Purwandini" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="./assets/images/dea.jpg"/>
+<img class="member-photo" data-nama="Dea Alif Purwandini" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/dea.jpg"/>
 <h4>Disarda</h4>
 <p>Dea Alif P.</p>
 </div>
@@ -1170,8 +1164,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
             Tampilkan Selengkapnya
         </button>
 </section>
-
-    <section class="route" data-route="achievements" id="achievements">
+<section class="route" data-route="achievements" id="achievements">
 <div class="achievements-container">
 <h2>Prestasi PAGASKA</h2>
 <article class="achievement-article">
@@ -1537,28 +1530,25 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </article>
 </div>
 </section>
-
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/pagaska_/" target="_blank" aria-label="Instagram">
-                <i class="fi fi-brands-instagram"></i> Instagram
+</main>
+<footer>
+<div class="social-links">
+<a aria-label="Instagram" href="https://www.instagram.com/pagaska_/" target="_blank">
+<i class="fi fi-brands-instagram"></i> Instagram
             </a>
-            <a href="https://www.youtube.com/pagaskasmkn5madiun" target="_blank" aria-label="YouTube">
-                <i class="fi fi-brands-youtube"></i> YouTube
+<a aria-label="YouTube" href="https://www.youtube.com/pagaskasmkn5madiun" target="_blank">
+<i class="fi fi-brands-youtube"></i> YouTube
             </a>
-            <a href="https://www.tiktok.com/gala.taksaka" target="_blank" aria-label="TikTok">
-                <i class="fi fi-brands-tik-tok"></i> TikTok
+<a aria-label="TikTok" href="https://www.tiktok.com/gala.taksaka" target="_blank">
+<i class="fi fi-brands-tik-tok"></i> TikTok
             </a>
-            <a href="https://www.smkn5madiun.sch.id" target="_blank" aria-label="Website Sekolah">
-                <i class="fi fi-rs-site-alt"></i> Website Sekolah
+<a aria-label="Website Sekolah" href="https://www.smkn5madiun.sch.id" target="_blank">
+<i class="fi fi-rs-site-alt"></i> Website Sekolah
             </a>
-        </div>
-        <p>&copy; 2026 PAGASKA — Paskibra Gala Taksaka. All rights reserved.</p>
-    </footer>
-
-    <div class="gallery-lightbox" id="galleryLightbox">
+</div>
+<p>© 2026 PAGASKA — Paskibra Gala Taksaka. All rights reserved.</p>
+</footer>
+<div class="gallery-lightbox" id="galleryLightbox">
 <div class="gallery-lightbox-content">
 <button class="lightbox-close" onclick="closeGalleryLightbox()">×</button>
 <img alt="" class="gallery-lightbox-img" id="lightboxImage" src=""/>
@@ -1569,8 +1559,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </div>
 </div>
 </div>
-
-    <div class="detail-lightbox" id="detailLightbox">
+<div class="detail-lightbox" id="detailLightbox">
 <div class="detail-lightbox-content">
 <div class="detail-lightbox-header">
 <h3 id="detailTitle">Detail Prestasi</h3>
@@ -1587,10 +1576,8 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </div>
 </div>
 </div>
-
-    <div id="memberLightbox"></div>
-
-    <script>
+<div id="memberLightbox"></div>
+<script>
 /* ==========================================================================
    PAGASKA — app.js
    Router SPA + semua fitur (menu, marquee, struktur organisasi, prestasi)
