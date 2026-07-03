@@ -2,16 +2,17 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="theme-color" content="#0b1220">
     <meta name="description" content="PAGASKA — Paskibra Gala Taksaka, SMK Negeri 5 Kota Madiun. Disiplin, kepemimpinan, dan kehormatan dalam pengibaran bendera.">
+    <link rel="icon" href="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-solid/css/uicons-regular-solid.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-rounded/css/uicons-bold-rounded.css">
     <link rel="stylesheet" href="css/style.css">
     <title>PAGASKA — Paskibra Gala Taksaka</title>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="logo-container">
             <div class="logo-placeholder">
@@ -24,11 +25,10 @@
         </div>
     </div>
 
-    <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="index.html" class="nav-logo">PAGASKA</a>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <a href="#/home" class="nav-logo" data-route-link="#/home">PAGASKA</a>
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu" role="button" tabindex="0">
                 <span></span><span></span><span></span>
             </div>
         </div>
@@ -36,15 +36,14 @@
 
     <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
     <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">Beranda</a></li>
-                <li><a href="beranda.html">Project</a></li>
-                <li><a href="about.html">Tentang</a></li>
-                <li><a href="history.html">Sejarah</a></li>
-                <li><a href="structure.html">Struktur</a></li>
-                <li><a href="achievements.html">Prestasi</a></li>
-            </ul>
+                <li><a href="#/home" data-route-link="#/home">Beranda</a></li>
+                <li><a href="#/project" data-route-link="#/project">Project</a></li>
+                <li><a href="#/about" data-route-link="#/about">Tentang</a></li>
+                <li><a href="#/history" data-route-link="#/history">Sejarah</a></li>
+                <li><a href="#/structure" data-route-link="#/structure">Struktur</a></li>
+                <li><a href="#/achievements" data-route-link="#/achievements">Prestasi</a></li>
+    </ul>
 
-    <!-- Recognition ticker -->
     <div class="marquee-container" id="marquee">
         <div class="marquee-content">
             <span class="marquee-item">JUARA HARAPAN 2 — PARADE SENJA 2024</span>
@@ -57,21 +56,1001 @@
         </div>
     </div>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hoist" aria-hidden="true"><div class="hoist-flag"></div></div>
-            <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png" alt="Logo PAGASKA">
-            <h1>PAGASKA</h1>
-            <p>Paskibra Gala Taksaka · SMK Negeri 5 Kota Madiun</p>
-            <a href="about.html" class="btn">
-                <i class="fi fi-rs-arrow-right"></i>
+    <main id="app">
+
+    <section id="route-home" data-route="home" class="route hero">
+<div class="hero-content">
+<div aria-hidden="true" class="hoist"><div class="hoist-flag"></div></div>
+<img alt="Logo PAGASKA" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h1>PAGASKA</h1>
+<p>Paskibra Gala Taksaka · SMK Negeri 5 Kota Madiun</p>
+<a class="btn" href="#/about">
+<i class="fi fi-rs-arrow-right"></i>
                 Selengkapnya
             </a>
-        </div>
-    </section>
+</div>
+</section>
 
-    <!-- Footer -->
+    <section id="route-project" data-route="project" class="route portal-hero">
+<div class="portal-content">
+<img alt="Logo PAGASKA" class="portal-logo" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<span class="eyebrow" style="justify-content:center; margin-bottom: 1rem;">Portal Digital</span>
+<h1 class="portal-title">PAGASKA</h1>
+<p class="portal-subtitle">Paskibra Gala Taksaka</p>
+<p class="portal-school">SMK Negeri 5 Kota Madiun</p>
+<div class="divider"></div>
+<p class="portal-description">
+                Selamat datang di portal resmi Paskibra Gala Taksaka. Kami adalah organisasi
+                kebanggaan SMKN 5 Kota Madiun yang berdedikasi dalam pengibaran bendera dan
+                pembentukan karakter pelajar. Jelajahi layanan digital kami di bawah ini.
+            </p>
+<a class="enter-btn" href="#/home">
+<i class="fi fi-rs-arrow-right"></i>
+                Masuk ke Website Utama
+            </a>
+<!-- Services -->
+<div class="services-grid">
+<a class="service-card" href="https://ai.pagaska.my.id" target="_blank">
+<i class="fi fi-brands-open-ai service-icon"></i>
+<h3 class="service-title">Pagaska AI</h3>
+<p class="service-desc">
+                        Asisten AI untuk membantu kebutuhan informasi dan pembelajaran interaktif seputar Paskibra dan kegiatan sekolah.
+                    </p>
+<span class="service-url">ai.pagaska.my.id →</span>
+</a>
+<a class="service-card" href="https://music.pagaska.my.id" target="_blank">
+<i class="fi fi-brands-spotify service-icon"></i>
+<h3 class="service-title">Pagaska Music</h3>
+<p class="service-desc">
+                        Platform streaming lagu dan mars Paskibra Gala Taksaka, lengkap dengan playlist latihan dan koleksi lagu patriotik.
+                    </p>
+<span class="service-url">music.pagaska.my.id →</span>
+</a>
+<a class="service-card" href="https://cloud.pagaska.my.id" target="_blank">
+<i class="fi fi-rs-cloud service-icon"></i>
+<h3 class="service-title">Pagaska Cloud</h3>
+<p class="service-desc">
+                        Penyimpanan cloud untuk dokumen, foto, dan file penting organisasi Paskibra dengan akses aman dan terorganisir.
+                    </p>
+<span class="service-url">cloud.pagaska.my.id →</span>
+</a>
+</div>
+</div>
+</section>
+
+    <section id="route-about" data-route="about" class="route">
+<span class="eyebrow">Tentang Kami</span>
+<h2>Tentang PAGASKA</h2>
+<div class="about-content" style="margin-top: 3rem;">
+<div class="about-text">
+<p><strong>PAGASKA (Paskibra Gala Taksaka)</strong> adalah ekstrakurikuler Paskibra dari SMK Negeri 5 Kota Madiun yang berdedikasi dalam melatih kedisiplinan, kepemimpinan, dan nasionalisme.</p>
+<p>Kami fokus pada pelatihan baris-berbaris, pengibaran bendera, dan pembentukan karakter siswa yang berintegritas tinggi serta memiliki jiwa patriotisme.</p>
+<p>PAGASKA telah mengikuti berbagai kompetisi LKBB (Lomba Ketangkasan Baris Berbaris) dan terus membina generasi pengibar bendera yang tegas, rapi, dan berjiwa satu komando.</p>
+</div>
+<div class="about-img">
+<img alt="Logo PAGASKA" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+</div>
+</div>
+<div class="pillars">
+<div class="pillar">
+<span class="num">01</span>
+<h3>Disiplin</h3>
+<p>Ketepatan gerak dan waktu dilatih hingga menjadi refleks, bukan sekadar aturan.</p>
+</div>
+<div class="pillar">
+<span class="num">02</span>
+<h3>Kepemimpinan</h3>
+<p>Setiap anggota dibentuk untuk mampu memimpin barisan maupun dirinya sendiri.</p>
+</div>
+<div class="pillar">
+<span class="num">03</span>
+<h3>Nasionalisme</h3>
+<p>Pengibaran Sang Saka Merah Putih dijalankan dengan penuh kehormatan dan makna.</p>
+</div>
+</div>
+</section>
+
+    <section id="route-history" data-route="history" class="route">
+<span class="eyebrow">Perjalanan</span>
+<h2>Sejarah PAGASKA</h2>
+<p class="section-lede">Tiga tahun barisan, satu komando yang sama.</p>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<span class="eyebrow">2022</span>
+<h3>Awal Perjalanan</h3>
+<p>PAGASKA didirikan sebagai ekstrakurikuler Paskibra di SMK Negeri 5 Kota Madiun. Pada tahun yang sama, mengikuti lomba LKBB pertama kali di tingkat Provinsi di Gor Lila Bhuana pada 16 Desember 2022.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<span class="eyebrow">2023</span>
+<h3>Prestasi Pasukan Pengibar Bendera</h3>
+<p>3 anggota PAGASKA berhasil terpilih untuk berpartisipasi dalam penurunan bendera Merah Putih di Kecamatan Dalung.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<span class="eyebrow">2024</span>
+<h3>Prestasi Kecamatan</h3>
+<p>10 siswa PAGASKA berhasil terpilih untuk berpartisipasi dalam penurunan bendera Merah Putih di Kecamatan Dalung pada 17 Agustus 2024 di Lapangan Binaraga Dalung.</p>
+</div>
+</div>
+</div>
+</section>
+
+    <section id="route-structure" data-route="structure" class="route">
+<h2>Struktur Organisasi</h2>
+<div class="org-tabs">
+<button class="org-tab active" onclick="showGen(1)">Generasi 1</button>
+<button class="org-tab" onclick="showGen(2)">Generasi 2</button>
+<button class="org-tab" onclick="showGen(3)">Generasi 3</button>
+</div>
+<!-- Generasi 1 -->
+<div class="org-content active" id="gen1">
+<div class="structure-layout">
+<!-- Pembina -->
+<div class="structure-pembina">
+<div class="org-card">
+<img class="member-photo" data-nama="Yulva Romhida" data-sosmed="@yulva_alfaiz" data-ttl="Madiun, 1 Januari 1980" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Pembina</h4>
+<p>Bapak Yulva Romhida</p>
+</div>
+</div>
+<!-- Pelatih -->
+<div class="section-title">Pelatih</div>
+<div class="structure-pelatih">
+<div class="org-card">
+<img class="member-photo" data-nama="Airlangga Sukmana Teja Bramata" data-sosmed="@airlanggabrmt_" data-ttl="Madiun, 9 September 1999" onclick="openMemberLightbox(this)" src="https://img1.pixhost.to/images/11273/677040669_uploaded_image.jpg"/>
+<h4>Pelatih</h4>
+<p>Airlangga Sukmana T.B.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Enrico Bryan's" data-sosmed="@enrico_bryans" data-ttl="Madiun, 9 November 2001" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Pelatih</h4>
+<p>Enrico Bryan's</p>
+</div>
+</div>
+<!-- Pengurus Inti -->
+<div class="section-title">Pengurus Inti</div>
+<div class="structure-pengurus">
+<div class="org-card">
+<img class="member-photo" data-nama="Ryan Yazid Hidayat" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Ketua Umum</h4>
+<p>Ryan Yazid Hidayat</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Sekar Rutikasari" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Wakil Ketua Umum</h4>
+<p>Sekar Rutikasari</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Hudaifa Ulil Albab" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Sekretaris</h4>
+<p>Ifa</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Febyola Putri Yulianti" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Bendahara</h4>
+<p>Feby</p>
+</div>
+</div>
+</div>
+<div class="more-structure" id="moreGen1">
+<div class="section-title">Pengurus Divisi</div>
+<div class="structure-divisi">
+<div class="org-card">
+<img class="member-photo" data-nama="Rehan Raiszaki Muhfroni" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Koor GK3</h4>
+<p>Rehan Raiszaki M.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Yasir Isa" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>GK3</h4>
+<p>Yasir Isa</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="William Cristian Josepa" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>GK3</h4>
+<p>William Cristian J.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Dina Tri Handayani" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>GK3</h4>
+<p>Dina Tri H.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Marsela Evi Novitasari" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>GK3</h4>
+<p>Marsela Evi Novitasari</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Naina Wulansari" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Koor Disarda</h4>
+<p>Naina Wulansari</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Renata Putri Aurellia" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Renata Putri A.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Dwi Yuliana Saputri" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Dwi Yuliana S</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Denis Putri Yuliana" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Denis Putri Y.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Ilham Bekti Pratama" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Ilham Bekti P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Nataly Reva Ayu Pradifa" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Nataly Reva A.P</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Amanda Amelia M." data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Amanda Amelia M.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Renata Putri Aurellia" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Disarda</h4>
+<p>Asiva Rizky Agustin</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Rizky Aditya" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Koor Infokom</h4>
+<p>Rizky Aditya</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Nisrina Kirana Alya" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Infokom</h4>
+<p>Nisrina Kirana A</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Amanda Fidda Reza Azzahara" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Infokom</h4>
+<p>Amanda Fidda R.A</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Salma Murni Indiannisa" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Infokom</h4>
+<p>Salma Murni I.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Zitkanisa Ullima" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Infokom</h4>
+<p>Zitkanisa Ullima</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Generasi 2 -->
+<div class="org-content" id="gen2">
+<div class="structure-layout">
+<!-- Pembina -->
+<div class="structure-pembina">
+<div class="org-card">
+<img class="member-photo" data-nama="Yulva Romhida" data-sosmed="@yulva_alfaiz" data-ttl="Madiun, 1 Januari 1980" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Pembina</h4>
+<p>Bapak Yulva Romhida</p>
+</div>
+</div>
+<!-- Pelatih -->
+<div class="section-title">Pelatih</div>
+<div class="structure-pelatih">
+<div class="org-card">
+<img class="member-photo" data-nama="Airlangga Sukmana Teja Bramata" data-sosmed="@airlanggabrmt_" data-ttl="Madiun, 9 September 1999" onclick="openMemberLightbox(this)" src="https://img1.pixhost.to/images/11273/677040669_uploaded_image.jpg"/>
+<h4>Pelatih</h4>
+<p>Airlangga Sukmana T.B.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Enrico Bryan's" data-sosmed="@enrico_bryans" data-ttl="Madiun, 9 November 2001" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Pelatih</h4>
+<p>Enrico Bryan's</p>
+</div>
+</div>
+<!-- Pengurus Inti -->
+<div class="section-title">Pengurus Inti</div>
+<div class="structure-pengurus">
+<div class="org-card">
+<img class="member-photo" data-nama="Rizky Indra Permana" data-sosmed="@rizkyndra" data-ttl="Madiun, 15 Maret 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/indra.jpg"/>
+<h4>Ketua Umum</h4>
+<p>Rizky Indra Permana</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Dwi Bella Noviyanti" data-sosmed="@dwibella" data-ttl="Madiun, 20 April 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/bella.jpg"/>
+<h4>Wakil Ketua Umum</h4>
+<p>Dwi Bella Noviyanti</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Anastasya Putri Giantio" data-sosmed="@anastasya" data-ttl="Madiun, 10 Mei 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/anas.jpg"/>
+<h4>Sekretaris</h4>
+<p>Anastasya Putri G.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Khofifah Tabina Azka Listaningtyas" data-sosmed="@khofifah" data-ttl="Madiun, 5 Juni 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pipah.jpg"/>
+<h4>Bendahara</h4>
+<p>Khofifah Tabina A.L.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Satria Nur Hidayatullah" data-sosmed="@satria_nh" data-ttl="Madiun, 12 Juli 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/satria.jpg"/>
+<h4>DTP</h4>
+<p>Satria Nur Hidayatullah</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Reyna Natasya Wahyu Safitri" data-sosmed="@reyna_natasya" data-ttl="Madiun, 18 Agustus 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/reyna.jpg"/>
+<h4>DTP</h4>
+<p>Reyna Natasya W.S.</p>
+</div>
+</div>
+</div>
+<div class="more-structure" id="moreGen2">
+<div class="section-title">Pengurus Divisi</div>
+<div class="structure-divisi">
+<div class="org-card">
+<img class="member-photo" data-nama="Ramzy Cahya Fauzan" data-sosmed="@ramzy_cf" data-ttl="Madiun, 22 September 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/ramzy.jpg"/>
+<h4>Koor GK3</h4>
+<p>Ramzy Cahya F.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Sapta Andika Riyanto" data-sosmed="@sapta_ar" data-ttl="Madiun, 30 Oktober 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/sapta.jpg"/>
+<h4>GK3</h4>
+<p>Sapta Andika Riyanto</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Farhan Rizky Devannanda" data-sosmed="@farhan_rd" data-ttl="Madiun, 5 November 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/farhan.jpg"/>
+<h4>GK3</h4>
+<p>Farhan Rizky Devannanda</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Keisya Nabila" data-sosmed="@keisya" data-ttl="Madiun, 14 Desember 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/keisya.jpg"/>
+<h4>GK3</h4>
+<p>Keisya Nabila</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Tata Regita" data-sosmed="@tata_regita" data-ttl="Madiun, 8 Januari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/tata.jpg"/>
+<h4>Koor Disarda</h4>
+<p>Tata Regita</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Amanda Regina Putri Yuditira" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/amanda.jpg"/>
+<h4>Disarda</h4>
+<p>Amanda Regina P.Y.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Ailen Listiani" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/ailen.jpg"/>
+<h4>Disarda</h4>
+<p>Ailen Listiani</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Lael Rahmadhani" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/lael.jpg"/>
+<h4>Disarda</h4>
+<p>Lael Rahmadhani</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Dea Alif Purwandini" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/dea.jpg"/>
+<h4>Disarda</h4>
+<p>Dea Alif P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Rizky Dava Mahendra" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/dava.jpg"/>
+<h4>Disarda</h4>
+<p>Rizky Dava M.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Alan Pratama" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/alan.jpg"/>
+<h4>Disarda</h4>
+<p>Alan Pratama</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Yohanes David Adhienarta Putra" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/david.jpg"/>
+<h4>Disarda</h4>
+<p>Yohanes David A.P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Aditya Dwi Pratama" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/adit.jpg"/>
+<h4>Disarda</h4>
+<p>Aditya Dwi P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Alfarel Belva Falarossy" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/farel.jpg"/>
+<h4>Disarda</h4>
+<p>Alfarel Belva F.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Giovanni Adhi Pratama" data-sosmed="@whoisvex" data-ttl="Madiun, 24 Maret 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/vex.png"/>
+<h4>Koor Infokom</h4>
+<p>Giovanni A.P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Desy Ariana Putri" data-sosmed="@desy" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/desy.jpg"/>
+<h4>Infokom</h4>
+<p>Desy Ariana P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Yusilla Anggun Vauli" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/yusilla.jpg"/>
+<h4>Infokom</h4>
+<p>Yusilla Anggun V.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Alisya Desvita Putri" data-sosmed="@disarda1" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/alisya.jpg"/>
+<h4>Infokom</h4>
+<p>Alisya Desvita P.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Generasi 3 -->
+<div class="org-content" id="gen3">
+<div class="structure-layout">
+<!-- Pembina -->
+<div class="structure-pembina">
+<div class="org-card">
+<img class="member-photo" data-nama="Yulva Romhida" data-sosmed="@yulva_alfaiz" data-ttl="Madiun, 1 Januari 1980" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Pembina</h4>
+<p>Bapak Yulva Romhida</p>
+</div>
+</div>
+<!-- Pelatih -->
+<div class="section-title">Pelatih</div>
+<div class="structure-pelatih">
+<div class="org-card">
+<img class="member-photo" data-nama="Airlangga Sukmana Teja Bramata" data-sosmed="@airlanggabrmt_" data-ttl="Madiun, 9 September 1999" onclick="openMemberLightbox(this)" src="https://img1.pixhost.to/images/11273/677040669_uploaded_image.jpg"/>
+<h4>Pelatih</h4>
+<p>Airlangga Sukmana T.B.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Enrico Bryan's" data-sosmed="@enrico_bryans" data-ttl="Madiun, 9 November 2001" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
+<h4>Pelatih</h4>
+<p>Enrico Bryan's</p>
+</div>
+</div>
+<!-- Pengurus Inti -->
+<div class="section-title">Pengurus Inti</div>
+<div class="structure-pengurus">
+<div class="org-card">
+<img class="member-photo" data-nama="Muhammad Afrizal Nurjananta" data-sosmed="@Afri.jaaal" data-ttl="Madiun, 9 Maret 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/afrizal.jpg"/>
+<h4>Ketua Umum</h4>
+<p>Muhammad Afrizal N.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Fatimah Az-Zahra" data-sosmed="@aarzhhh_" data-ttl="Madiun, 26 Juli 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/zahra.jpg"/>
+<h4>Wakil Ketua Umum</h4>
+<p>Fatimah Az-Zahra</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Nazuwa Qurroti Aqyuni Hasna" data-sosmed="@nanasywaww" data-ttl="Magetan, 28 Mei 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nazuwa.jpg"/>
+<h4>Sekretaris 1</h4>
+<p>Nazuwa Qurroti A.H.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Asyifa Najwa Nabilla Putri" data-sosmed="@syi1.faaa_ " data-ttl="Kota Madiun, 14 Januari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/asyifa.jpg"/>
+<h4>Sekretaris 2</h4>
+<p>Asyifa Najwa N.P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Eva Devi Setyorini" data-sosmed="@evadvsty" data-ttl="Madiun, 8 April 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/eva.jpg"/>
+<h4>Bendahara 1</h4>
+<p>Eva Devi S.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Winni Lestari Arti Ningsih" data-sosmed="@Lovly_winn" data-ttl="Madiun, 6 Januari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG-20260213-WA0008.jpg"/>
+<h4>Bendahara 2</h4>
+<p>Winni Lestari A.N.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Yoga Prasetyo Wibowo" data-sosmed="@yogaprsttyo" data-ttl="Madiun, 27 Oktober 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/yoga.jpg"/>
+<h4>DTP</h4>
+<p>Yoga Prasetyo W.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Lelly Anggraini" data-sosmed="@erjoyedlia" data-ttl="Sarolangun, 15 Januari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/lelly.webp"/>
+<h4>DTP</h4>
+<p>Lelly Anggraini</p>
+</div>
+</div>
+</div>
+<div class="more-structure" id="moreGen3">
+<div class="section-title">Pengurus Divisi</div>
+<div class="structure-divisi">
+<div class="org-card">
+<img class="member-photo" data-nama="Fahri Lintang Saputra" data-sosmed="@fls._.110209" data-ttl="Madiun, 11 Februari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nopal.JPG"/>
+<h4>Koor GK3</h4>
+<p>Fahri Lintang S.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Clarinta Jida Valery" data-sosmed="@yinsatoru" data-ttl="Pekanbaru, 31 Mei 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/clarinta.jpg"/>
+<h4>GK3</h4>
+<p>Clarinta Jida V.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Nur Azizah Lailatul Munawaroh" data-sosmed="@azizuumll" data-ttl="Magetan, 19 Maret 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nur.jpg"/>
+<h4>GK3</h4>
+<p>Nur Azizah L.M.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Violita Ayu Wardani" data-sosmed="@Piosyalalalaa" data-ttl="Madiun, 29 Mei 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/violita.jpg"/>
+<h4>GK3</h4>
+<p>Violita Ayu W.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Aymel Oktavia Fitroh Masyaroh" data-sosmed="@_Xyviii08" data-ttl="Magetan, 25 Oktober 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/aymel.jpg"/>
+<h4>GK3</h4>
+<p>Aymel Oktavia F.M. </p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Suci Rofiqoh" data-sosmed="@_niicth" data-ttl="Kota Madiun, 30 Desember 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/suci.jpg"/>
+<h4>Koor Disarda</h4>
+<p>Suci Rofiqoh</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Nabila Kayyisa Putri" data-sosmed="@nbilakyyisa" data-ttl="Madiun, 5 April 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nabila.jpg"/>
+<h4>Disarda</h4>
+<p>Nabila Kayyisa P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Rolly Sadion Astyani" data-sosmed="@rolisa__30" data-ttl="Magetan, 30 Desember 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/rolly.jpeg"/>
+<h4>Disarda</h4>
+<p>Rolly Sadion A.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Subhanifa Dwi Verbyanti" data-sosmed="@nadivrya" data-ttl="Madiun, 17 Februari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/subhanifah.jpg"/>
+<h4>Disarda</h4>
+<p>Subhanifa Dwi V. </p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Mariska Cahya Dwi Maulida" data-sosmed="@maris.kachyaa" data-ttl="Magetan, 20 Maret 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/mariska.jpg"/>
+<h4>Disarda</h4>
+<p>Mariska Cahya D.M</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Jahra' Anasula Farianto" data-sosmed="@meliorism.ysea" data-ttl="Madiun, 10 November 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/yasmin.jpg"/>
+<h4>Disarda</h4>
+<p>Jahra' Anasula F.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Ella Rahmadani Elliana" data-sosmed="@ellll" data-ttl="Madiun, 20 Februari 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/ella.png"/>
+<h4>Disarda</h4>
+<p>Ella Rahmadani E.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Silvia Nur Ramadhani" data-sosmed="@slvvr4m4" data-ttl="Madiun, 28 Agustus 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/silvi.jpg"/>
+<h4>Disarda</h4>
+<p>Silvia Nur R.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Adly Surya Prasetiyo" data-sosmed="@718dly" data-ttl="Kota Madiun, 17 November 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/adly.jpg"/>
+<h4>Disarda</h4>
+<p>Adly Surya P.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Meysa Desta Maharani" data-sosmed="@mey.ajlh_" data-ttl="Kota Madiun, 12 Mei 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/meysa.webp"/>
+<h4>Disarda</h4>
+<p>Meysa Desta M.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Richy Yuga Tri Finalya" data-sosmed="@rchy.yg" data-ttl="Madiun, 29 Desember 2007" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/Richy%20Yuga.webp"/>
+<h4>Koor Infokom</h4>
+<p>Richy Yuga T.F </p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Anisa Apriliana Tunggal Dewi" data-sosmed="@o_oveuc" data-ttl="Madiun, 12 April 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/anisa.jpg"/>
+<h4>Infokom</h4>
+<p>Anisa Apriliana T.D.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Bhilqis Tian Zahrotushita" data-sosmed="@bluetz_summer" data-ttl="Bogor, 28 April 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/bilqis.jpg"/>
+<h4>Infokom</h4>
+<p>Bhilqis Tian Z.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Az Zahrah Khanza Dewi Kuwais" data-sosmed="@bibbleeze" data-ttl="Madiun, 3 Oktober 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/khanza.jpg"/>
+<h4>Infokom</h4>
+<p>Az Zahrah Khanza D.K.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Nindia Artita Lestari" data-sosmed="@ndiaayyl" data-ttl="Madiun, 13 Februari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nindia.jpg"/>
+<h4>Infokom</h4>
+<p>Nindia Artita L.</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Fahrel Akbar" data-sosmed="@f4ahrell" data-ttl="Madiun, 1 Oktober 2008" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/fahrel.jpg"/>
+<h4>Infokom</h4>
+<p>Fahrel Akbar</p>
+</div>
+<div class="org-card">
+<img class="member-photo" data-nama="Janathan Hafiz" data-sosmed="@janatan_official_" data-ttl="Madiun, 14 Januari 2009" onclick="openMemberLightbox(this)" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/nathan.jpg"/>
+<h4>Infokom</h4>
+<p>Janathan Hafiz</p>
+</div>
+</div>
+</div>
+</div>
+<button class="toggle-btn" onclick="toggleCurrentGen()">
+            Tampilkan Selengkapnya
+        </button>
+</section>
+
+    <section class="route" data-route="achievements" id="route-achievements">
+<div class="achievements-container">
+<h2>Prestasi PAGASKA</h2>
+<article class="achievement-article">
+<div class="achievement-header">
+<span class="ribbon ppi">PPI</span>
+<h2 class="achievement-title">PASUKAN PENGIBAR BENDERA 2023</h2>
+<div class="achievement-meta">
+<span>🇮🇩 PASUKAN PENGIBAR BENDERA</span>
+<span>📅 17 Agustus 2023</span>
+<span>📍 Alun-alun Kota Madiun</span>
+</div>
+</div>
+<div class="achievement-body">
+<img alt="PAGASKA" class="achievement-image" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/fotbarppi.jpg"/>
+<p class="image-caption">3 Anggota PAGASKA berhasil lolos menjadi Pasukan Pengibar Bendera Kota Madiun 2023</p>
+<div class="achievement-description">
+<p>Selamat &amp; Sukses Atas keberhasilannya menjadi anggota Pasukan Pengibar Bendera Kota Madiun Tahun 2023.</p>
+</div>
+<div class="achievement-details">
+<div class="detail-item">
+<div class="detail-label">Nama Kategori:</div>
+<div class="detail-value">Seleksi Pasukan Pengibar Bendera Kota Madiun 2023</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Tempat:</div>
+<div class="detail-value">Alun-Alun Kota Madiun</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Penyelenggara:</div>
+<div class="detail-value">Pemkot Madiun</div>
+</div>
+</div>
+<div class="video-container">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="10" src="https://www.youtube.com/embed/0WlEDEEisbM" title="Dokumentasi Pengibaran Bendera Tahun 2023">
+</iframe>
+</div>
+<h3 style="color: var(--secondary); margin: 30px 0 15px;">Gallery Dokumentasi</h3>
+<div class="gallery-grid" id="gallery0">
+<div class="gallery-item" data-index="0">
+<img alt="Apel Pembukaan Pelatihan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pemb.jpg" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pemb.jpg"/>
+</div>
+<div class="gallery-item" data-index="1">
+<img alt="Pembukaan Pelatihan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pemb1.jpg" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pemb1.jpg"/>
+</div>
+<div class="gallery-item" data-index="2">
+<img alt="Pendidikan PPI" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pendidikan.jpg" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pendidikan.jpg"/>
+</div>
+<div class="gallery-item" data-index="3">
+<img alt="Pendidikan PPI" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pend2.jpg" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/pend2.jpg"/>
+</div>
+</div>
+<div class="achievement-footer">
+<div class="tags">
+<span class="tag">PPI Kota Madiun</span>
+<span class="tag">Pasukan Pengibar Bendera</span>
+<span class="tag">Kota Madiun</span>
+</div>
+<button class="read-more" onclick="openDetailLightbox('prestasi0')">
+                            Baca Selengkapnya
+                            <span>→</span>
+</button>
+</div>
+</div>
+</article>
+<!-- GELEGAR 23 -->
+<article class="achievement-article">
+<div class="achievement-header">
+<span class="ribbon aqua" style="font-size: 9.3px;">Best Basecamp</span>
+<h2 class="achievement-title">LPBB GELEGAR 15th</h2>
+<div class="achievement-meta">
+<span>🏆 Best Basecamp</span>
+<span>📅 4 November 2023</span>
+<span>📍 SMAN 2 Jombang</span>
+</div>
+</div>
+<div class="achievement-body">
+<img alt="LKBB Baratayuda'3" class="achievement-image" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG"/>
+<p class="image-caption">PAGASKA berhasil meraih juara Pelajar 1 di LPBB GELEGAR 15th Se-Jawa</p>
+<div class="achievement-description">
+<p>PAGASKA berhasil meraih juara Pelajar 1 di LPBB GELEGAR 15th berkat kerja keras seluruh anggota dan kekompakan seluruh anggota dalam LPBB tersebut, dan akhirnya mendapatkan hasil yang memuaskan.</p>
+</div>
+<div class="achievement-details">
+<div class="detail-item">
+<div class="detail-label">Nama Lomba:</div>
+<div class="detail-value">LPBB GELEGAR 15th</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Lokasi:</div>
+<div class="detail-value">SMAN 2 Jombang, Kabupaten Jombang</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Penyelenggara:</div>
+<div class="detail-value">SMAN 2 Jombang</div>
+</div>
+</div>
+<h3 style="color: var(--secondary); margin: 30px 0 15px;">Gallery Dokumentasi</h3>
+<div class="gallery-grid" id="gallery1">
+<div class="gallery-item" data-index="0">
+<img alt="Foto Bersama" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG"/>
+</div>
+<div class="gallery-item" data-index="1">
+<img alt="Penampilan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG"/>
+</div>
+<div class="gallery-item" data-index="2">
+<img alt="Persiapan DP" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtyddp.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtyddp.JPG"/>
+</div>
+<div class="gallery-item" data-index="3">
+<img alt="Penyerahan piala" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_5855.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_5855.JPG"/>
+</div>
+</div>
+<div class="achievement-footer">
+<div class="tags">
+<span class="tag">LPBB GELEGAR 15th</span>
+<span class="tag">Juara Pelajar 1</span>
+<span class="tag">PAGASKA</span>
+</div>
+<button class="read-more" onclick="openDetailLightbox('prestasi1')">
+                            Baca Dokumentasi
+                            <span>→</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PAMER 23 -->
+<article class="achievement-article">
+<div class="achievement-header">
+<span class="ribbon aqua" style="font-size: 9.3px;">PELAJAR 1</span>
+<h2 class="achievement-title">LKBB PAMER 2023</h2>
+<div class="achievement-meta">
+<span>🏆 Juara Pelajar 1</span>
+<span>📅 24 Juni 2023</span>
+<span>📍 SMAN 2 Madiun</span>
+</div>
+</div>
+<div class="achievement-body">
+<img alt="LKBB Baratayuda'3" class="achievement-image" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG"/>
+<p class="image-caption">PAGASKA berhasil meraih juara Pelajar 1 di LKBB PAMER Se-Jawa</p>
+<div class="achievement-description">
+<p>PAGASKA berhasil meraih juara Pelajar 1 di LKBB PAMER berkat kerja keras seluruh anggota dan kekompakan seluruh anggota dalam LKBB tersebut, dan akhirnya mendapatkan hasil yang memuaskan.</p>
+</div>
+<div class="achievement-details">
+<div class="detail-item">
+<div class="detail-label">Nama Lomba:</div>
+<div class="detail-value">LKBB PAMER</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Lokasi:</div>
+<div class="detail-value">Gor Wilis, Kota Madiun</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Penyelenggara:</div>
+<div class="detail-value">SMAN 2 Madiun</div>
+</div>
+</div>
+<h3 style="color: var(--secondary); margin: 30px 0 15px;">Gallery Dokumentasi</h3>
+<div class="gallery-grid" id="gallery2">
+<div class="gallery-item" data-index="0">
+<img alt="Foto Bersama" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG"/>
+</div>
+<div class="gallery-item" data-index="1">
+<img alt="Penampilan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG"/>
+</div>
+<div class="gallery-item" data-index="2">
+<img alt="Persiapan DP" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtyddp.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtyddp.JPG"/>
+</div>
+<div class="gallery-item" data-index="3">
+<img alt="Penyerahan piala" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_5855.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_5855.JPG"/>
+</div>
+</div>
+<div class="achievement-footer">
+<div class="tags">
+<span class="tag">LKBB PAMER</span>
+<span class="tag">Juara Pelajar 1</span>
+<span class="tag">PAGASKA</span>
+</div>
+<button class="read-more" onclick="openDetailLightbox('prestasi2')">
+                            Baca Dokumentasi
+                            <span>→</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Parja 24 -->
+<article class="achievement-article">
+<div class="achievement-header">
+<span class="ribbon oren" style="font-size: 9,01px;">HARAPAN 2</span>
+<h2 class="achievement-title">Parade Senja 2024</h2>
+<div class="achievement-meta">
+<span>🏆 Juara Harapan 2</span>
+<span>📅 25 November 2024</span>
+<span>📍Pahlawan Street Center, Madiun</span>
+</div>
+</div>
+<div class="achievement-body">
+<img alt="PAGASKA meraih Juara Harapan 2" class="achievement-image" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/parjafb.JPG"/>
+<p class="image-caption">PAGASKA berhasil meraih juara harapan 2 di Parade Senja Kota Madiun 2024</p>
+<div class="achievement-description">
+<p>Prestasi gemilang yang berhasil ditorehkan oleh PAGASKA dalam Lomba Parade Senja Kota Madiun Tahun 2024. Tim kami berhasil mengungguli 15 tim peserta lainnya dengan total nilai tertinggi dalam semua kategori penilaian.</p>
+</div>
+<div class="achievement-details">
+<div class="detail-item">
+<div class="detail-label">Nama Lomba:</div>
+<div class="detail-value">Parade Senja 2024</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Tempat:</div>
+<div class="detail-value">Pahlawan Street Center, Kota Madiun</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Penyelenggara:</div>
+<div class="detail-value">Pemkot Madiun</div>
+</div>
+</div>
+<div class="video-container">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="10" src="https://www.youtube.com/embed/d5gf9dXbPi0" title="Dokumentasi LKBB 2024">
+</iframe>
+</div>
+<h3 style="color: var(--secondary); margin: 30px 0 15px;">Gallery Dokumentasi</h3>
+<div class="gallery-grid" id="gallery3">
+<div class="gallery-item" data-index="0">
+<img alt="Foto Bersama" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/parjafb.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/parjafb.JPG"/>
+</div>
+<div class="gallery-item" data-index="1">
+<img alt="Penampilan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/penampilan.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/penampilan.JPG"/>
+</div>
+<div class="gallery-item" data-index="2">
+<img alt="Penurunan bendera" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_0651.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_0651.JPG"/>
+</div>
+<div class="gallery-item" data-index="3">
+<img alt="Penutup" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_0674.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_0674.JPG"/>
+</div>
+</div>
+<div class="achievement-footer">
+<div class="tags">
+<span class="tag">LKBB</span>
+<span class="tag">Juara 1</span>
+<span class="tag">Kota Madiun</span>
+</div>
+<button class="read-more" onclick="openDetailLightbox('prestasi3')">
+                            Baca Selengkapnya
+                            <span>→</span>
+</button>
+</div>
+</div>
+</article>
+<!--  Baratayuda'3 25-->
+<article class="achievement-article">
+<div class="achievement-header">
+<span class="ribbon aqua" style="font-size: 9.3px;">PELAJAR 1</span>
+<h2 class="achievement-title">LKBB Baratayuda'3 2025</h2>
+<div class="achievement-meta">
+<span>🏆 Juara Pelajar 1</span>
+<span>📅 23 Febuari 2025</span>
+<span>📍 SMAN 1 Boyolangu</span>
+</div>
+</div>
+<div class="achievement-body">
+<img alt="LKBB Baratayuda'3" class="achievement-image" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG"/>
+<p class="image-caption">PAGASKA berhasil meraih juara Pelajar 1 di LKBB Baratayuda'3 Se-Jawa Timur</p>
+<div class="achievement-description">
+<p>PAGASKA berhasil meraih juara Pelajar 1 di LKBB Baratayuda'3 berkat kerja keras seluruh anggota dan kekompakan seluruh anggota dalam LKBB tersebut, dan akhirnya mendapatkan hasil yang memuaskan.</p>
+</div>
+<div class="achievement-details">
+<div class="detail-item">
+<div class="detail-label">Nama Lomba:</div>
+<div class="detail-value">LKBB Baratayuda'3</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Lokasi:</div>
+<div class="detail-value">SMAN 1 Boyolangu, Tulungagung</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Penyelenggara:</div>
+<div class="detail-value">SMAN 1 Boyolangu</div>
+</div>
+</div>
+<h3 style="color: var(--secondary); margin: 30px 0 15px;">Gallery Dokumentasi</h3>
+<div class="gallery-grid" id="gallery4">
+<div class="gallery-item" data-index="0">
+<img alt="Foto Bersama" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/baratayudafb.JPG"/>
+</div>
+<div class="gallery-item" data-index="1">
+<img alt="Penampilan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG"/>
+</div>
+<div class="gallery-item" data-index="2">
+<img alt="Persiapan DP" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtyddp.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtyddp.JPG"/>
+</div>
+<div class="gallery-item" data-index="3">
+<img alt="Penyerahan piala" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_5855.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_5855.JPG"/>
+</div>
+</div>
+<div class="achievement-footer">
+<div class="tags">
+<span class="tag">LKBB Baratayuda'3</span>
+<span class="tag">Juara Pelajar 1</span>
+<span class="tag">PAGASKA</span>
+</div>
+<button class="read-more" onclick="openDetailLightbox('prestasi4')">
+                            Baca Dokumentasi
+                            <span>→</span>
+</button>
+</div>
+</div>
+</article>
+<!--  Antasena 25-->
+<article class="achievement-article">
+<div class="achievement-header">
+<span class="ribbon aqua" style="font-size: 9.3px;">PELAJAR 1</span>
+<h2 class="achievement-title">LKBB Baratayuda'3 2025</h2>
+<div class="achievement-meta">
+<span>🏆 Juara Pelajar 1</span>
+<span>📅 23 Febuari 2025</span>
+<span>📍 SMAN 1 Boyolangu</span>
+</div>
+</div>
+<div class="achievement-body">
+<img alt="LKBB Baratayuda'3" class="achievement-image" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_6865.JPG"/>
+<p class="image-caption">PAGASKA berhasil meraih juara Pelajar 1 di LKBB Baratayuda'3 Se-Jawa Timur</p>
+<div class="achievement-description">
+<p>PAGASKA berhasil meraih juara Pelajar 1 di LKBB Baratayuda'3 berkat kerja keras seluruh anggota dan kekompakan seluruh anggota dalam LKBB tersebut, dan akhirnya mendapatkan hasil yang memuaskan.</p>
+</div>
+<div class="achievement-details">
+<div class="detail-item">
+<div class="detail-label">Nama Lomba:</div>
+<div class="detail-value">LKBB Baratayuda'3</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Lokasi:</div>
+<div class="detail-value">SMAN 1 Boyolangu, Tulungagung</div>
+</div>
+<div class="detail-item">
+<div class="detail-label">Penyelenggara:</div>
+<div class="detail-value">SMAN 1 Boyolangu</div>
+</div>
+</div>
+<h3 style="color: var(--secondary); margin: 30px 0 15px;">Gallery Dokumentasi</h3>
+<div class="gallery-grid" id="gallery5">
+<div class="gallery-item" data-index="0">
+<img alt="Foto Bersama" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_6865.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_6865.JPG"/>
+</div>
+<div class="gallery-item" data-index="1">
+<img alt="Penampilan" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/brtydpen.JPG"/>
+</div>
+<div class="gallery-item" data-index="2">
+<img alt="Persiapan DP" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_7080.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_7080.JPG"/>
+</div>
+<div class="gallery-item" data-index="3">
+<img alt="Penyerahan piala" data-src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_7028.JPG" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/IMG_7028.JPG"/>
+</div>
+</div>
+<div class="achievement-footer">
+<div class="tags">
+<span class="tag">LKBB Baratayuda'3</span>
+<span class="tag">Juara Pelajar 1</span>
+<span class="tag">PAGASKA</span>
+</div>
+<button class="read-more" onclick="openDetailLightbox('prestasi5')">
+                            Baca Dokumentasi
+                            <span>→</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+    </main>
+
     <footer>
         <div class="social-links">
             <a href="https://www.instagram.com/pagaska_/" target="_blank" aria-label="Instagram">
@@ -90,6 +1069,38 @@
         <p>&copy; 2026 PAGASKA — Paskibra Gala Taksaka. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <div class="gallery-lightbox" id="galleryLightbox">
+<div class="gallery-lightbox-content">
+<button class="lightbox-close" onclick="closeGalleryLightbox()">×</button>
+<img alt="" class="gallery-lightbox-img" id="lightboxImage" src=""/>
+<button class="lightbox-nav lightbox-prev" onclick="prevImage()">❮</button>
+<button class="lightbox-nav lightbox-next" onclick="nextImage()">❯</button>
+<div class="lightbox-counter">
+<span id="currentIndex">1</span> / <span id="totalImages">4</span>
+</div>
+</div>
+</div>
+
+    <div class="detail-lightbox" id="detailLightbox">
+<div class="detail-lightbox-content">
+<div class="detail-lightbox-header">
+<h3 id="detailTitle">Detail Prestasi</h3>
+</div>
+<img alt="" class="detail-lightbox-image" id="detailMainImage" src=""/>
+<div class="detail-lightbox-text" id="detailText">
+<!-- Konten akan diisi oleh JavaScript -->
+</div>
+<div class="detail-lightbox-gallery" id="detailGallery">
+<!-- Gallery kecil akan diisi oleh JavaScript -->
+</div>
+<div class="detail-lightbox-footer">
+<button class="detail-close" onclick="closeDetailLightbox()">Tutup</button>
+</div>
+</div>
+</div>
+
+    <div id="memberLightbox"></div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
