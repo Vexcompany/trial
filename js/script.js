@@ -14,10 +14,32 @@ window.addEventListener('load', function() {
 // Menu Toggle
 function toggleMenu() {
     const navMenu = document.getElementById('navMenu');
-    if (navMenu) {
-        navMenu.classList.toggle('active');
-    }
+    const navOverlay = document.getElementById('navOverlay');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    if (!navMenu) return;
+
+    const isOpen = navMenu.classList.toggle('active');
+    if (navOverlay) navOverlay.classList.toggle('active', isOpen);
+    if (toggleBtn) toggleBtn.classList.toggle('active', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
 }
+
+// Close mobile menu when a nav link is tapped
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                if (toggleBtn) toggleBtn.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
+});
 
 // Inisialisasi Marquee dengan JavaScript
 function initMarquee() {
