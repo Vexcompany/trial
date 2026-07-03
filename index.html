@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1220">
     <meta name="description" content="PAGASKA — Paskibra Gala Taksaka, SMK Negeri 5 Kota Madiun. Disiplin, kepemimpinan, dan kehormatan dalam pengibaran bendera.">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-solid/css/uicons-regular-solid.css">
@@ -30,7 +31,11 @@
             <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </div>
-            <ul class="nav-menu" id="navMenu">
+        </div>
+    </nav>
+
+    <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+    <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active">Beranda</a></li>
                 <li><a href="beranda.html">Project</a></li>
                 <li><a href="about.html">Tentang</a></li>
@@ -38,8 +43,6 @@
                 <li><a href="structure.html">Struktur</a></li>
                 <li><a href="achievements.html">Prestasi</a></li>
             </ul>
-        </div>
-    </nav>
 
     <!-- Recognition ticker -->
     <div class="marquee-container" id="marquee">
@@ -57,6 +60,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
+            <div class="hoist" aria-hidden="true"><div class="hoist-flag"></div></div>
             <img src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png" alt="Logo PAGASKA">
             <h1>PAGASKA</h1>
             <p>Paskibra Gala Taksaka · SMK Negeri 5 Kota Madiun</p>
