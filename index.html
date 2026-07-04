@@ -31,10 +31,10 @@
     --ash: #5b5f66;
     --white: #ffffff;
 
-    --bg: var(--parchment);
-    --text: var(--ink);
-    --text-muted: var(--ash);
-    --border: rgba(11, 18, 32, 0.1);
+    --bg: var(--ink);
+    --text: var(--parchment);
+    --text-muted: rgba(250,246,236,0.55);
+    --border: rgba(250,246,236,0.12);
 
     --font-display: 'Fraunces', Georgia, serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -125,7 +125,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .nav-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--parchment); letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.5rem; }
 
 .nav-menu { list-style: none; display: flex; gap: 2.1rem; flex: 1; justify-content: flex-end; align-items: center; margin: 0; padding: 0; }
-.nav-menu a { font-size: 0.83rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(250, 246, 236, 0.7); position: relative; padding: 0.4rem 0; transition: color 0.25s ease; }
+.nav-menu a { font-size: 0.83rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(250, 246, 236, 0.7); position: relative; padding: 0.4rem 0; transition: color 0.25s ease; display: flex; align-items: center; }
 .nav-menu a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.25s ease; }
 .nav-menu a:hover, .nav-menu a.active { color: var(--parchment); }
 .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
@@ -192,33 +192,11 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .hero-content { position: relative; z-index: 1; max-width: 640px; }
 .hero-content img { width: 92px; margin: 0 auto 1.75rem; filter: drop-shadow(0 0 24px rgba(184,145,47,0.35)); }
 
-/* Flag-hoist signature — a pole with a flag raised on load, standing in
-   for the generic gradient-blob hero decoration. Ties directly to the
-   subject: PAGASKA is a flag-raising corps. */
-.hoist { position: relative; height: 120px; width: 2px; margin: 0 auto 2rem; }
-.hoist::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(var(--gold-bright), rgba(184,145,47,0.15));
-}
-.hoist-flag {
-    position: absolute;
-    left: 2px;
-    top: 100%;
-    width: 42px;
-    height: 28px;
-    background: linear-gradient(135deg, var(--crimson-bright) 50%, var(--parchment) 50%);
-    clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
-    animation: raiseFlag 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
-}
-@keyframes raiseFlag {
-    0% { top: 100%; }
+
     100% { top: 0%; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .hoist-flag { animation: none; top: 0%; }
+    
 }
 .hero-content h1 { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5.2rem); font-weight: 600; color: var(--parchment); letter-spacing: 0.01em; line-height: 1; }
 .hero-content p { font-family: var(--font-mono); color: rgba(250,246,236,0.6); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 1.1rem 0 2.4rem; }
@@ -227,22 +205,22 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 
 /* Sections */
 section { padding: 6.5rem 1.5rem; }
-section h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; text-align: center; color: var(--ink); margin-bottom: 0.75rem; }
+section h2 { font-family: var(--font-display); color: var(--parchment); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; text-align: center; color: var(--ink); margin-bottom: 0.75rem; }
 .section-lede { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; color: var(--text-muted); font-size: 1.02rem; }
 
 /* About */
-#about { background: var(--bg); }
+#about { background: var(--ink); }
 .about-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; max-width: var(--max-w); margin: 0 auto; align-items: center; }
 .about-text p { color: var(--text-muted); margin-bottom: 1.25rem; font-size: 1.02rem; }
-.about-text strong { color: var(--ink); }
+.about-text strong { color: var(--gold-bright); }
 .about-img { background: var(--ink); border-radius: var(--radius); padding: 3rem; display: flex; align-items: center; justify-content: center; position: relative; }
 .about-img::before { content: ''; position: absolute; inset: 14px; border: 1px solid rgba(184,145,47,0.35); pointer-events: none; }
 .about-img img { width: 100%; max-width: 220px; }
 .pillars { max-width: var(--max-w); margin: 4rem auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.pillar { padding: 2rem 1.75rem; border: 1px solid var(--border); border-top: 2px solid var(--gold); background: var(--white); }
+.pillar { padding: 2rem 1.75rem; border: 1px solid rgba(250,246,236,0.1); border-top: 2px solid var(--gold); background: rgba(255,255,255,0.03); }
 .pillar .num { font-family: var(--font-mono); color: var(--gold); font-size: 0.8rem; letter-spacing: 0.08em; }
-.pillar h3 { font-family: var(--font-display); font-size: 1.25rem; margin: 0.6rem 0 0.6rem; color: var(--ink); }
-.pillar p { color: var(--text-muted); font-size: 0.94rem; }
+.pillar h3 { font-family: var(--font-display); font-size: 1.25rem; margin: 0.6rem 0 0.6rem; color: var(--parchment); }
+.pillar p { color: rgba(250,246,236,0.55); font-size: 0.94rem; }
 @media (max-width: 860px) { .about-content { grid-template-columns: 1fr; gap: 2.5rem; } .pillars { grid-template-columns: 1fr; } }
 
 /* Timeline */
@@ -259,12 +237,12 @@ section h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75r
 .timeline-content p { color: rgba(250,246,236,0.62); font-size: 0.98rem; }
 
 /* Structure page */
-#structure, .structure-section { background: var(--bg); }
-.section-title { text-align: center; color: var(--ink); margin: 3rem 0 1.75rem 0; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; position: relative; display: block; width: 100%; }
+#structure, .structure-section { background: #0f1a2e; }
+.section-title { text-align: center; color: var(--parchment); margin: 3rem 0 1.75rem 0; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; position: relative; display: block; width: 100%; }
 .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: var(--gold); margin: 0.7rem auto 0; }
-.org-card { background: var(--white); padding: 1.75rem 1.5rem; border-radius: var(--radius); text-align: center; border: 1px solid var(--border); border-bottom: 2px solid var(--gold); box-shadow: 0 8px 22px rgba(11,18,32,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.org-card { background: rgba(255,255,255,0.04); padding: 1.75rem 1.5rem; border-radius: var(--radius); text-align: center; border: 1px solid rgba(250,246,236,0.1); border-bottom: 2px solid var(--gold); box-shadow: 0 8px 22px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .org-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(11,18,32,0.1); }
-.org-card h4 { font-family: var(--font-display); color: var(--ink); margin: 1rem 0 0.35rem; font-size: 1.05rem; font-weight: 600; }
+.org-card h4 { font-family: var(--font-display); color: var(--parchment); margin: 1rem 0 0.35rem; font-size: 1.05rem; font-weight: 600; }
 .org-card p { color: var(--text-muted); font-size: 0.92rem; margin: 0; }
 .member-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 2px; cursor: pointer; transition: transform 0.3s; filter: grayscale(15%); }
 .member-photo:hover { transform: scale(1.02); filter: grayscale(0%); }
@@ -333,16 +311,16 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
 .org-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem; }
 .org-tab {
     font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 0.7rem 1.4rem; background: var(--white); color: var(--text-muted); border: 1px solid var(--border);
+    padding: 0.7rem 1.4rem; background: rgba(255,255,255,0.05); color: rgba(250,246,236,0.55); border: 1px solid rgba(250,246,236,0.15);
     border-radius: 999px; cursor: pointer; transition: all 0.25s ease;
 }
-.org-tab:hover { border-color: var(--gold); color: var(--ink); }
+.org-tab:hover { border-color: var(--gold); color: var(--parchment); }
 .org-tab.active { background: var(--gold); color: var(--ink); border-color: var(--gold); }
 .org-content { display: none; }
 .org-content.active { display: block; animation: routeFade 0.3s ease; }
 .more-structure { display: none; }
 .toggle-btn {
-    display: block; margin: 2.5rem auto 0; padding: 0.85rem 2.2rem; background: transparent; color: var(--ink);
+    display: block; margin: 2.5rem auto 0; padding: 0.85rem 2.2rem; background: transparent; color: var(--parchment);
     border: 1px solid var(--gold); border-radius: var(--radius); font-family: var(--font-body); font-weight: 600;
     font-size: 0.85rem; letter-spacing: 0.04em; cursor: pointer; transition: all 0.3s ease;
 }
@@ -354,8 +332,8 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
 .achievements-container { max-width: 880px; margin: 0 auto; }
 .achievements-container > h2 { margin-bottom: 3.5rem; }
 .achievement-article {
-    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
-    margin-bottom: 3rem; overflow: hidden; box-shadow: 0 8px 22px rgba(11,18,32,0.05);
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(250,246,236,0.1); border-radius: var(--radius);
+    margin-bottom: 3rem; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,0.3);
 }
 .achievement-header { padding: 2rem 2rem 0; text-align: center; }
 .ribbon {
@@ -365,15 +343,15 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
 }
 .ribbon.ppi { background: var(--crimson); color: var(--parchment); }
 .ribbon.aqua { background: var(--navy); color: var(--parchment); }
-.achievement-title { font-family: var(--font-display); font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink); margin-bottom: 1rem; }
+.achievement-title { font-family: var(--font-display); font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--parchment); margin-bottom: 1rem; }
 .achievement-meta { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
 .achievement-body { padding: 0 2rem 2rem; }
 .achievement-image { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius); margin-bottom: 0.75rem; }
 .image-caption { text-align: center; color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-bottom: 1.75rem; }
 .achievement-description p { color: var(--text-muted); margin-bottom: 1.25rem; }
-.achievement-details { display: grid; gap: 0.75rem; background: var(--parchment-dim); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.75rem; }
+.achievement-details { display: grid; gap: 0.75rem; background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.75rem; }
 .detail-item { display: grid; grid-template-columns: 140px 1fr; gap: 0.75rem; font-size: 0.9rem; }
-.detail-label { color: var(--ink); font-weight: 600; }
+.detail-label { color: var(--parchment); font-weight: 600; }
 .detail-value { color: var(--text-muted); }
 .video-container { position: relative; width: 100%; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem; background: var(--ink); }
 .video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -381,9 +359,9 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
 .gallery-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; aspect-ratio: 1/1; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
 .gallery-item:hover img { transform: scale(1.06); }
-.achievement-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.achievement-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(250,246,236,0.12); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; background: var(--parchment-dim); color: var(--text-muted); padding: 0.35rem 0.75rem; border-radius: 999px; }
+.tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.07); color: rgba(250,246,236,0.55); padding: 0.35rem 0.75rem; border-radius: 999px; }
 .read-more {
     display: inline-flex; align-items: center; gap: 0.5rem; background: none; border: none; color: var(--crimson);
     font-weight: 600; font-size: 0.85rem; cursor: pointer; font-family: var(--font-body); transition: gap 0.25s ease;
@@ -418,11 +396,11 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
     align-items: flex-start; justify-content: center; padding: 3rem 1.5rem; overflow-y: auto;
 }
 .detail-lightbox.active { display: flex; }
-.detail-lightbox-content { background: var(--white); border-radius: var(--radius); max-width: 720px; width: 100%; padding: 2rem; }
-.detail-lightbox-header h3 { font-family: var(--font-display); color: var(--ink); font-size: 1.4rem; margin-bottom: 1.25rem; }
+.detail-lightbox-content { background: #131e33; border-radius: var(--radius); max-width: 720px; width: 100%; padding: 2rem; }
+.detail-lightbox-header h3 { font-family: var(--font-display); color: var(--parchment); font-size: 1.4rem; margin-bottom: 1.25rem; }
 .detail-lightbox-image { width: 100%; max-height: 320px; object-fit: cover; border-radius: var(--radius); margin-bottom: 1.25rem; }
-.detail-lightbox-text p { color: var(--text-muted); margin-bottom: 1rem; }
-.detail-lightbox-text ul { color: var(--text-muted); margin: 0 0 1rem 1.25rem; }
+.detail-lightbox-text p { color: rgba(250,246,236,0.65); margin-bottom: 1rem; }
+.detail-lightbox-text ul { color: rgba(250,246,236,0.65); margin: 0 0 1rem 1.25rem; }
 .detail-lightbox-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 0.6rem; margin: 1.5rem 0; }
 .detail-lightbox-gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius); cursor: pointer; }
 .detail-lightbox-footer { text-align: right; margin-top: 1rem; }
@@ -488,7 +466,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
     overflow-y: auto;
 }
 .member-lightbox-box {
-    background: var(--white); border-radius: var(--radius); max-width: 400px; width: 100%;
+    background: #131e33; border-radius: var(--radius); max-width: 400px; width: 100%;
     padding: 1.75rem; position: relative; max-height: 85vh; overflow-y: auto;
 }
 .member-lightbox-close {
@@ -499,12 +477,16 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 }
 .member-lightbox-close:hover { background: var(--crimson-bright); transform: scale(1.06); }
 .member-lightbox-photo { width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 1.25rem; }
-.member-lightbox-name { color: var(--ink); font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; text-align: center; }
+.member-lightbox-name { color: var(--parchment); font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; text-align: center; }
 .member-lightbox-info { text-align: left; }
-.member-lightbox-info p { margin-bottom: 0.4rem; color: var(--text-muted); font-size: 0.92rem; }
-.member-lightbox-info strong { color: var(--ink); }
+.member-lightbox-info p { margin-bottom: 0.4rem; color: rgba(250,246,236,0.65); font-size: 0.92rem; }
+.member-lightbox-info strong { color: var(--parchment); }
 
-    </style>
+    
+#achievements { background: #0b1220; }
+
+#about h2, #structure h2, #achievements h2 { color: var(--parchment); }
+</style>
 </head>
 <body>
 <div id="loading-screen">
@@ -547,7 +529,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 <main id="app">
 <section class="route hero" data-route="home" id="home">
 <div class="hero-content">
-<div aria-hidden="true" class="hoist"><div class="hoist-flag"></div></div>
+
 <img alt="Logo PAGASKA" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
 <h1>PAGASKA</h1>
 <p>Paskibra Gala Taksaka · SMK Negeri 5 Kota Madiun</p>
