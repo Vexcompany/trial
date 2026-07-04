@@ -121,16 +121,16 @@ nav {
     background: var(--ink);
     border-bottom: 1px solid rgba(184, 145, 47, 0.18);
 }
-nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1.5rem; }
-.nav-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--parchment); letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.5rem; }
+nav .container { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 68px; max-width: var(--max-w); margin: 0 auto; padding: 0 1.75rem; }
+.nav-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--parchment); letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.5rem; justify-self: start; }
 
-.nav-menu { list-style: none; display: flex; gap: 2.1rem; flex: 1; justify-content: flex-end; align-items: center; margin: 0; padding: 0; }
+.nav-menu { list-style: none; display: flex; gap: 2.1rem; align-items: center; margin: 0; padding: 0; }
 .nav-menu a { font-size: 0.83rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(250, 246, 236, 0.7); position: relative; padding: 0.4rem 0; transition: color 0.25s ease; display: flex; align-items: center; }
 .nav-menu a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.25s ease; }
 .nav-menu a:hover, .nav-menu a.active { color: var(--parchment); }
 .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
 
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 700; width: 24px; }
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 700; width: 24px; justify-self: end; }
 .menu-toggle span { width: 24px; height: 2px; background: var(--parchment); transition: transform 0.3s ease, opacity 0.3s ease; }
 .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
@@ -149,6 +149,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 
 @media (max-width: 1080px) {
     .menu-toggle { display: flex; }
+    nav .container { display: flex; justify-content: space-between; }
     .nav-menu {
         list-style: none;
         position: fixed;
@@ -415,7 +416,7 @@ footer p { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.
    ========================================================================== */
 .container { padding: 0 clamp(1.1rem, 4vw, 1.75rem); }
 section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
-.nav-menu { gap: clamp(1.1rem, 1.8vw, 2.1rem); flex-wrap: nowrap; }
+
 @media (max-width: 1200px) { .nav-menu { gap: 1rem; } .about-content { gap: 3rem; } }
 @media (max-width: 1080px) { .nav-menu a { font-size: 0.8rem; } }
 @media (max-width: 520px) {
@@ -501,9 +502,7 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 </div>
 </div>
 <nav>
-<div class="container">
-<a class="nav-logo" data-route-link="#/home" href="#/home">PAGASKA</a>
-<ul class="nav-menu" id="navMenu">
+<div class="container"><a class="nav-logo" data-route-link="#/home" href="#/home">PAGASKA</a><ul class="nav-menu" id="navMenu">
 <li><a data-route-link="#/home" href="#/home">Beranda</a></li>
 <li><a data-route-link="#/project" href="#/project">Project</a></li>
 <li><a data-route-link="#/about" href="#/about">Tentang</a></li>
@@ -512,9 +511,8 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 <li><a data-route-link="#/achievements" href="#/achievements">Prestasi</a></li>
 </ul><div aria-label="Buka menu" class="menu-toggle" id="menuToggle" onclick="toggleMenu()" role="button" tabindex="0">
 <span></span><span></span><span></span>
-</div>
-<div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div></div>
-</nav>
+</div></div>
+</nav><div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
 <div class="marquee-container" id="marquee">
 <div class="marquee-content">
 <span class="marquee-item">JUARA HARAPAN 2 — PARADE SENJA 2024</span>
@@ -529,7 +527,6 @@ section { padding: clamp(3rem, 8vw, 6.5rem) clamp(1.1rem, 4vw, 1.5rem); }
 <main id="app">
 <section class="route hero" data-route="home" id="home">
 <div class="hero-content">
-
 <img alt="Logo PAGASKA" src="https://iffrqakrixmgobvkzpzc.supabase.co/storage/v1/object/public/foto/logo.png"/>
 <h1>PAGASKA</h1>
 <p>Paskibra Gala Taksaka · SMK Negeri 5 Kota Madiun</p>
